@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { events } from '@/app/lib/track';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -23,15 +24,22 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && menuOpen) setMenuOpen(false);
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [menuOpen]);
+
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md' : 'bg-white'
+      className={`sticky top-0 z-50 transition-shadow duration-300 bg-white ${
+        scrolled ? 'shadow-[0_2px_12px_rgba(26,26,46,0.08)]' : ''
       }`}
     >
       <div className="max-w-content mx-auto px-4 flex items-center justify-between h-20 md:h-24">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" aria-label="Bozhiqi Painting & Decorating — home">
           <Image
             src="/logo.png"
             alt="Bozhiqi Painting & Decorating"
@@ -41,9 +49,9 @@ export default function Header() {
             priority
           />
         </Link>
+        </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -55,10 +63,11 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href="tel:07828288449"
+            onClick={events.callClick}
+            aria-label="Call us on 07828 288 449"
             className="text-sm font-semibold text-[#3d3d3d] hover:text-[#b8860b] transition-colors"
           >
             07828 288 449
@@ -71,13 +80,14 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
         <button
-          className="md:hidden p-2 text-[#1a1a2e]"
+          className="md:hidden p-2 text-[#1a1a2e] rounded-lg hover:bg-[#faf8f5] transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             {menuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -87,38 +97,46 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t border-[#e8e4df] shadow-lg">
-          <nav className="flex flex-col px-4 py-4 gap-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-[#3d3d3d] font-semibold py-2 border-b border-[#e8e4df] hover:text-[#b8860b] transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="flex flex-col gap-3 pt-2">
-              <a
-                href="tel:07828288449"
-                className="text-center border-2 border-[#1a1a2e] text-[#1a1a2e] font-semibold py-3 rounded-lg"
-              >
-                Call 07828 288 449
-              </a>
-              <Link
-                href="/contact"
-                className="text-center bg-[#b8860b] text-white font-semibold py-3 rounded-lg"
-                onClick={() => setMenuOpen(false)}
-              >
-                Get a Free Quote
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
+      <div
+        id="mobile-nav"
+        className={`md:hidden bg-white border-t border-[#e8e4df] shadow-lg transition-all duration-200 overflow-hidden ${
+          menuOpen ? 'max-h-[500px]' : 'max-h-0 border-t-0'
+        }`}
+        aria-hidden={!menuOpen}
+      >
+        <nav className="flex flex-col px-4 py-4 gap-1" aria-label="Mobile navigation">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[#3d3d3d] font-semibold py-3 border-b border-[#e8e4df] hover:text-[#b8860b] transition-colors"
+              onClick={() => setMenuOpen(false)}
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="flex flex-col gap-3 pt-3">
+            <a
+              href="tel:07828288449"
+              onClick={() => { events.callClick(); setMenuOpen(false); }}
+              aria-label="Call us on 07828 288 449"
+              className="text-center border-2 border-[#1a1a2e] text-[#1a1a2e] font-semibold py-3 rounded-lg hover:bg-[#1a1a2e] hover:text-white transition-colors"
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              Call 07828 288 449
+            </a>
+            <Link
+              href="/contact"
+              className="text-center bg-[#b8860b] text-white font-semibold py-3 rounded-lg hover:bg-[#9a7009] transition-colors"
+              onClick={() => setMenuOpen(false)}
+              tabIndex={menuOpen ? 0 : -1}
+            >
+              Get a Free Quote
+            </Link>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

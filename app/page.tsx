@@ -78,52 +78,80 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1a1a2e] text-white">
-        <div className="max-w-content mx-auto px-4 py-16 md:py-24 md:grid md:grid-cols-2 md:gap-12 md:items-center">
+      <section className="relative bg-[#1a1a2e] text-white overflow-hidden min-h-[480px] md:min-h-[540px] flex items-center">
+        {/* Subtle radial glow for depth */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
+        </div>
+
+        <div className="relative max-w-content mx-auto px-4 py-16 md:py-24 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
           <div>
+            {/* Brass accent bar above H1 */}
+            <div className="w-10 h-[3px] bg-[#b8860b] rounded mb-5" aria-hidden="true" />
             <h1 className="font-serif text-white mb-6 leading-tight">
               Professional Painters &amp; Decorators in North London
             </h1>
-            <p className="text-[#e8e4df] text-lg leading-relaxed mb-8">
+            <p className="text-[#c8c4be] text-lg leading-relaxed mb-8 max-w-xl">
               Meticulous painting, wallpaper installation, and plastering across North &amp; South London.
               Clean finishes, on time, every time.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Link
                 href="/contact"
-                className="bg-[#b8860b] text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-[#9a7009] transition-all hover:scale-[1.02] text-lg"
+                className="bg-[#b8860b] text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-[#9a7009] transition-all hover:scale-[1.02] text-base shadow-[0_4px_16px_rgba(184,134,11,0.35)]"
               >
                 Get a Free Quote
               </Link>
               <a
                 href="tel:07828288449"
-                className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-white hover:text-[#1a1a2e] transition-all text-lg"
+                className="border-2 border-[#4a4a6e] text-white font-semibold px-8 py-4 rounded-lg text-center hover:border-white transition-all text-base"
               >
                 Call 07828 288 449
               </a>
             </div>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#b8860b] font-semibold">
-              <span>★★★★★ 5.0 Google</span>
-              <span className="text-[#6b7280]">|</span>
-              <span>9.78/10 Checkatrade</span>
-              <span className="text-[#6b7280]">|</span>
-              <span>15 Years Experience</span>
+            {/* Social proof pills */}
+            <div className="flex flex-wrap gap-3">
+              {[
+                { text: '★★★★★ 5.0 Google' },
+                { text: '9.78/10 Checkatrade' },
+                { text: '15 Years Experience' },
+                { text: 'Fully Insured' },
+              ].map((pill) => (
+                <span
+                  key={pill.text}
+                  className="text-xs font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-3 py-1.5 rounded-full"
+                >
+                  {pill.text}
+                </span>
+              ))}
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center">
-            <div className="bg-[#2d2d4e] rounded-2xl h-96 w-full flex items-center justify-center text-[#e8e4df] text-sm">
-              <p className="text-center px-8 leading-relaxed">
-                Project photography will be added here — contact us for a portfolio viewing.
-              </p>
+
+          {/* Project photo slot — replace bg-[#2d2d4e] div with next/image once photos are available */}
+          <div className="hidden md:block">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-[#2d2d4e] to-[#1a1a2e] border border-[#3a3a5e]">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                <div className="w-12 h-[2px] bg-[#b8860b] rounded mb-4 mx-auto" />
+                <p className="text-[#e8e4df] text-sm leading-relaxed">
+                  Project photography coming soon.
+                </p>
+                <p className="text-[#6b7280] text-xs mt-2">
+                  View our work on{' '}
+                  <a href="https://www.checkatrade.com/trades/bozhiqi" className="text-[#b8860b] hover:underline" target="_blank" rel="noopener noreferrer">
+                    Checkatrade
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Pain & Agitation */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-6">Tired of Unreliable Decorators?</h2>
             <p className="text-[#3d3d3d] text-lg leading-relaxed mb-6">
               You&apos;ve been let down before. A decorator who doesn&apos;t show up, cuts corners on
@@ -152,9 +180,10 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="bg-[#faf8f5] py-16 md:py-20">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-12">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4">Our Services</h2>
             <p className="text-[#6b7280] max-w-xl mx-auto">
               From a single feature wall to a complete exterior repaint — we deliver flawless results on every project.
@@ -165,7 +194,7 @@ export default function HomePage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(26,26,46,0.06)] hover:shadow-[0_8px_30px_rgba(26,26,46,0.1)] transition-all group"
+                className="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(26,26,46,0.06)] hover:shadow-[0_12px_32px_rgba(26,26,46,0.12)] hover:-translate-y-1 transition-all duration-200 group"
               >
                 <h3 className="font-serif text-[#1a1a2e] text-xl mb-2">{service.title}</h3>
                 <p className="text-[#6b7280] text-sm leading-relaxed mb-4">{service.description}</p>
@@ -186,9 +215,10 @@ export default function HomePage() {
       </section>
 
       {/* 3-Step Process */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-12">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4">Our 3-Step Process</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -225,10 +255,11 @@ export default function HomePage() {
       </section>
 
       {/* Reviews */}
-      <section className="bg-[#faf8f5] py-16 md:py-20">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="font-serif text-[#1a1a2e] mb-4">What Our Clients Say</h2>
+            <div className="brass-divider mx-auto" aria-hidden="true" />
+            <h2 className="font-serif text-[#1a1a2e] mb-3">What Our Clients Say</h2>
             <p className="text-[#6b7280]">9.78/10 on Checkatrade from 55 verified reviews</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -277,9 +308,10 @@ export default function HomePage() {
       </section>
 
       {/* Areas */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-10">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4">Areas We Cover</h2>
             <p className="text-[#6b7280] max-w-xl mx-auto">
               Based in Southgate, North London, we serve clients across North and South London.
@@ -305,9 +337,10 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#faf8f5] py-16 md:py-20">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-10">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4">Frequently Asked Questions</h2>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -317,7 +350,7 @@ export default function HomePage() {
       </section>
 
       {/* Soft CTA */}
-      <section className="bg-[#1a1a2e] py-16 md:py-20">
+      <section className="bg-[#1a1a2e] section-py">
         <div className="max-w-content mx-auto px-4 text-center">
           <h2 className="font-serif text-white mb-4">Ready to Refresh Your Home?</h2>
           <p className="text-[#e8e4df] text-lg mb-8 max-w-xl mx-auto">
