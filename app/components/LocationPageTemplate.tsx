@@ -135,7 +135,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       </section>
 
       {/* Local Hook */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-[#1a1a2e] mb-6">Painting & Decorating in {location.name}</h2>
@@ -165,8 +165,9 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       </section>
 
       {/* Services */}
-      <section className="bg-[#faf8f5] py-16">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
+          <div className="brass-divider mx-auto" aria-hidden="true" />
           <h2 className="font-serif text-[#1a1a2e] text-center mb-10">Services in {location.name}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
@@ -187,8 +188,9 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       </section>
 
       {/* Process */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
+          <div className="brass-divider mx-auto" aria-hidden="true" />
           <h2 className="font-serif text-[#1a1a2e] text-center mb-10">Our Process</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
@@ -207,9 +209,10 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       </section>
 
       {/* Reviews */}
-      <section className="bg-[#faf8f5] py-16">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4">Trusted by London Homeowners</h2>
             <div className="flex justify-center gap-0.5 mb-4">
               {Array.from({ length: 5 }).map((_, i) => <span key={i} className="text-[#b8860b] text-2xl">★</span>)}
@@ -237,7 +240,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
 
       {/* Nearby Areas */}
       {nearby.length > 0 && (
-        <section className="bg-white py-16">
+        <section className="bg-white section-py">
           <div className="max-w-content mx-auto px-4">
             <h2 className="font-serif text-[#1a1a2e] mb-6">Nearby Areas We Also Serve</h2>
             <NearbyLocations locations={nearby} />
@@ -246,7 +249,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       )}
 
       {/* FAQ */}
-      <section className="bg-[#faf8f5] py-16">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <h2 className="font-serif text-[#1a1a2e] text-center mb-10">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto">
@@ -256,7 +259,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1a1a2e] py-16">
+      <section className="bg-[#1a1a2e] section-py">
         <div className="max-w-content mx-auto px-4 text-center">
           <h2 className="font-serif text-white mb-4">Get a Free Quote in {location.name}</h2>
           <p className="text-[#e8e4df] mb-8">Fixed-price quotation. Response within 45 minutes. Fully insured.</p>

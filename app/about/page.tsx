@@ -52,7 +52,7 @@ export default function AboutPage() {
       </section>
 
       {/* Bio */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="bg-[#faf8f5] rounded-2xl p-8 border border-[#e8e4df] mb-10">
@@ -110,9 +110,10 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-[#faf8f5] py-16 md:py-20">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-12">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4">Our Values</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -144,8 +145,9 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4 max-w-3xl">
+          <div className="brass-divider mx-auto mb-0" aria-hidden="true" />
           <h2 className="font-serif text-[#1a1a2e] mb-8 text-center">Credentials & Accreditations</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
@@ -173,7 +175,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1a1a2e] py-16">
+      <section className="bg-[#1a1a2e] section-py">
         <div className="max-w-content mx-auto px-4 text-center">
           <h2 className="font-serif text-white mb-4">Work With Jetmir</h2>
           <p className="text-[#e8e4df] mb-8 max-w-xl mx-auto">

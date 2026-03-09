@@ -79,7 +79,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-[#faf8f5] py-16 md:py-20">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
@@ -108,9 +108,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Secondary Services */}
-      <section className="bg-white py-16">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-4 text-center">Also Available</h2>
             <p className="text-[#6b7280] text-center mb-8">
               In addition to our core services, we handle a range of additional decorating tasks.
@@ -128,7 +129,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1a1a2e] py-16">
+      <section className="bg-[#1a1a2e] section-py">
         <div className="max-w-content mx-auto px-4 text-center">
           <h2 className="font-serif text-white mb-4">Get a Fixed-Price Quote</h2>
           <p className="text-[#e8e4df] mb-8 max-w-xl mx-auto">

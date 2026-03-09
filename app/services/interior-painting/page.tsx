@@ -100,7 +100,7 @@ export default function InteriorPaintingPage() {
       </section>
 
       {/* Main Content */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="prose-body space-y-5 text-[#3d3d3d] leading-relaxed">
@@ -194,8 +194,9 @@ export default function InteriorPaintingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#faf8f5] py-16">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
+          <div className="brass-divider mx-auto" aria-hidden="true" />
           <h2 className="font-serif text-[#1a1a2e] text-center mb-10">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto">
             <FAQAccordion items={faqs} />
@@ -204,7 +205,7 @@ export default function InteriorPaintingPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1a1a2e] py-16">
+      <section className="bg-[#1a1a2e] section-py">
         <div className="max-w-content mx-auto px-4 text-center">
           <h2 className="font-serif text-white mb-4">Get a Fixed-Price Interior Painting Quote</h2>
           <p className="text-[#e8e4df] mb-8">We respond within 45 minutes. No obligation.</p>

@@ -287,6 +287,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Showreel Video */}
+      <section className="bg-[#1a1a2e] section-py">
+        <div className="max-w-content mx-auto px-4">
+          <div className="text-center mb-8">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
+            <h2 className="font-serif text-white mb-3">See Our Work in Action</h2>
+            <p className="text-[#c8c4be] max-w-xl mx-auto">
+              A short look at recent projects — from preparation through to the final finish.
+            </p>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden max-w-3xl mx-auto shadow-[0_24px_64px_rgba(0,0,0,0.5)]">
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/images/exterior-painting-detached-house-north-london.webp"
+              className="w-full aspect-video object-cover"
+              aria-label="Bozhiqi Painting & Decorating project showreel"
+            >
+              <source src="/videos/bozhiqi-painting-decorating-showreel.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* Reviews */}
       <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">

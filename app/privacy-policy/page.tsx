@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto prose-body space-y-8 text-[#3d3d3d] leading-relaxed">
             <div>

@@ -33,10 +33,11 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      <section className="bg-[#faf8f5] py-16 md:py-20">
+      <section className="bg-[#faf8f5] section-py">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12">
+              <div className="brass-divider" aria-hidden="true" />
               <h2 className="font-serif text-[#1a1a2e] mb-2">North London</h2>
               <p className="text-[#6b7280] mb-6">Our primary service area — based in Southgate N14.</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -58,6 +59,7 @@ export default function LocationsPage() {
             </div>
 
             <div>
+              <div className="brass-divider" aria-hidden="true" />
               <h2 className="font-serif text-[#1a1a2e] mb-2">South London</h2>
               <p className="text-[#6b7280] mb-6">We regularly travel to South London for the right project.</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -81,7 +83,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      <section className="bg-[#1a1a2e] py-16">
+      <section className="bg-[#1a1a2e] section-py">
         <div className="max-w-content mx-auto px-4 text-center">
           <h2 className="font-serif text-white mb-4">Don&apos;t See Your Area?</h2>
           <p className="text-[#e8e4df] mb-8 max-w-xl mx-auto">
