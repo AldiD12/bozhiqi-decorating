@@ -64,17 +64,15 @@ export default function ExteriorPaintingPage() {
               <a href="tel:07828288449" className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all text-center">Call 07828 288 449</a>
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
-              <Image
-                src="/images/exterior-painting-detached-house-north-london.webp"
-                alt="Full exterior repaint of large detached house in North London"
-                fill
-                priority
-                sizes="50vw"
-                className="object-cover"
-              />
-            </div>
+          <div className="relative -mx-4 md:mx-0 aspect-[16/10] md:aspect-[4/3] md:rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.4)] mt-8 md:mt-0">
+            <Image
+              src="/images/exterior-painting-detached-house-north-london.webp"
+              alt="Full exterior repaint of large detached house in North London"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>

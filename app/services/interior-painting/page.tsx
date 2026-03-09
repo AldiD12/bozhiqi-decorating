@@ -86,17 +86,15 @@ export default function InteriorPaintingPage() {
               </a>
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
-              <Image
-                src="/images/interior-painting-living-room-fireplace-period-cornicing.webp"
-                alt="Period living room with freshly painted white walls, fireplace and herringbone floor"
-                fill
-                priority
-                sizes="50vw"
-                className="object-cover"
-              />
-            </div>
+          <div className="relative -mx-4 md:mx-0 aspect-[16/10] md:aspect-[4/3] md:rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.4)] mt-8 md:mt-0">
+            <Image
+              src="/images/interior-painting-living-room-fireplace-period-cornicing.webp"
+              alt="Period living room with freshly painted white walls, fireplace and herringbone floor"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>

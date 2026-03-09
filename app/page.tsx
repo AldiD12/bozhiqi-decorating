@@ -79,14 +79,15 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[#1a1a2e] text-white overflow-hidden min-h-[480px] md:min-h-[540px] flex items-center">
+      <section className="relative bg-[#1a1a2e] text-white overflow-hidden">
         {/* Subtle radial glow for depth */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
         </div>
 
-        <div className="relative max-w-content mx-auto px-4 py-16 md:py-24 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
-          <div>
+        <div className="relative max-w-content mx-auto px-4 pt-10 md:py-24 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
+          {/* Text content */}
+          <div className="pb-8 md:pb-0">
             {/* Brass accent bar above H1 */}
             <div className="w-10 h-[3px] bg-[#b8860b] rounded mb-5" aria-hidden="true" />
             <h1 className="font-serif text-white mb-6 leading-tight">
@@ -128,21 +129,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero project photo */}
-          <div className="hidden md:block">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
-              <Image
-                src="/images/exterior-painting-detached-house-north-london.webp"
-                alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
-                fill
-                priority
-                sizes="(max-width: 1200px) 50vw, 580px"
-                className="object-cover"
-              />
-              {/* Subtle caption badge */}
-              <div className="absolute bottom-4 left-4 bg-[#1a1a2e]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10">
-                Southgate, N14 — Full Exterior Repaint
-              </div>
+          {/* Hero project photo — full bleed on mobile, rounded card on desktop */}
+          <div className="relative -mx-4 md:mx-0 aspect-[16/10] md:aspect-[4/3] md:rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.4)] mt-8 md:mt-0">
+            <Image
+              src="/images/exterior-painting-detached-house-north-london.webp"
+              alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
+              className="object-cover"
+            />
+            <div className="absolute bottom-4 left-4 bg-[#1a1a2e]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10">
+              Southgate, N14 — Full Exterior Repaint
             </div>
           </div>
         </div>
@@ -182,7 +180,7 @@ export default function HomePage() {
 
       {/* Photo Strip */}
       <section className="bg-[#1a1a2e] py-6 overflow-hidden" aria-label="Project photo highlights">
-        <div className="flex gap-3 px-4 max-w-content mx-auto md:grid md:grid-cols-4 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-4 max-w-content mx-auto">
           {[
             {
               src: '/images/interior-painting-panelled-reception-room-herringbone.webp',
@@ -201,12 +199,12 @@ export default function HomePage() {
               alt: 'Hallway with arched plastered and painted ceiling',
             },
           ].map((photo) => (
-            <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden flex-shrink-0 w-[70vw] md:w-auto">
+            <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                sizes="(max-width: 768px) 70vw, 25vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
