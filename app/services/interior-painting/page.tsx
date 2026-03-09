@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumb from '@/app/components/Breadcrumb';
+import Image from 'next/image';
 import FAQAccordion from '@/app/components/FAQAccordion';
 
 export const metadata: Metadata = {
@@ -63,25 +64,39 @@ export default function InteriorPaintingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-[#1a1a2e] text-white py-12 md:py-16">
-        <div className="max-w-content mx-auto px-4">
-          <Breadcrumb
-            items={[
-              { name: 'Services', href: '/services' },
-              { name: 'Interior Painting', href: '/services/interior-painting' },
-            ]}
-          />
-          <h1 className="font-serif text-white mt-4">Interior Painting Across London</h1>
-          <p className="text-[#e8e4df] text-lg mt-4 max-w-2xl">
-            Flawless emulsion, eggshell, and specialist finishes for every room — from single bedrooms to whole-house redecorations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Link href="/contact" className="bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all text-center">
-              Get a Free Quote
-            </Link>
-            <a href="tel:07828288449" className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all text-center">
-              Call 07828 288 449
-            </a>
+      <section className="bg-[#1a1a2e] text-white py-12 md:py-20">
+        <div className="max-w-content mx-auto px-4 md:grid md:grid-cols-2 md:gap-12 md:items-center">
+          <div>
+            <Breadcrumb
+              items={[
+                { name: 'Services', href: '/services' },
+                { name: 'Interior Painting', href: '/services/interior-painting' },
+              ]}
+            />
+            <h1 className="font-serif text-white mt-4">Interior Painting Across London</h1>
+            <p className="text-[#e8e4df] text-lg mt-4 max-w-2xl">
+              Flawless emulsion, eggshell, and specialist finishes for every room — from single bedrooms to whole-house redecorations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Link href="/contact" className="bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all text-center">
+                Get a Free Quote
+              </Link>
+              <a href="tel:07828288449" className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all text-center">
+                Call 07828 288 449
+              </a>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
+              <Image
+                src="/images/interior-painting-living-room-fireplace-period-cornicing.webp"
+                alt="Period living room with freshly painted white walls, fireplace and herringbone floor"
+                fill
+                priority
+                sizes="50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
