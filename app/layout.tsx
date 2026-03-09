@@ -4,6 +4,8 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import TrustBar from '@/app/components/TrustBar';
 import MobileStickyFooter from '@/app/components/MobileStickyFooter';
+import CookieBanner from '@/app/components/CookieBanner';
+import GoogleAnalytics from '@/app/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bozhiqidecorating.co.uk'),
@@ -77,11 +79,14 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        <GoogleAnalytics />
         <TrustBar />
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <MobileStickyFooter />
+        <CookieBanner />
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── CSS custom properties ─────────────────────────────────────────────── */
 :root {
   --charcoal: #1a1a2e;
   --brass: #b8860b;
@@ -12,61 +13,90 @@
   --border-color: #e8e4df;
 }
 
+/* ─── Base ───────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #faf8f5;
-  color: #3d3d3d;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background-color: var(--ivory);
+  color: var(--slate);
   font-size: 17px;
   line-height: 1.7;
+  /* Subtle paper texture — adds warmth without being distracting */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 768px) {
+/* Bottom padding so mobile sticky footer doesn't obscure last content */
+@media (max-width: 767px) {
   body {
     padding-bottom: 64px;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   body {
     font-size: 18px;
   }
 }
 
+/* ─── Typography ─────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: 'DM Serif Display', Georgia, serif;
   letter-spacing: -0.02em;
   font-weight: 400;
   line-height: 1.2;
+  color: var(--charcoal);
 }
 
-h1 {
-  font-size: 2.25rem;
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
-
-h2 {
-  font-size: 1.75rem;
-}
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
 
 @media (min-width: 768px) {
-  h2 {
-    font-size: 2.25rem;
-  }
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.6rem; }
 }
 
+/* Headings inside dark sections inherit white */
+.text-white h1,
+.text-white h2,
+.text-white h3 {
+  color: inherit;
+}
+
+/* ─── Skip link (WCAG 2.4.1) ─────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--brass);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ─── Focus styles (WCAG 2.4.7) ─────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
 .fade-in-section.is-visible {
@@ -74,8 +104,54 @@ h2 {
   transform: translateY(0);
 }
 
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ─── Hero gradient overlay helper ───────────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.97) 0%,
+    rgba(26, 26, 46, 0.88) 60%,
+    rgba(26, 26, 46, 0.75) 100%
+  );
+}
+
+/* ─── Brass divider accent ──────────────────────────────────────────────── */
+.brass-divider {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--brass);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+/* ─── Utilities ─────────────────────────────────────────────────────────── */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Section vertical rhythm */
+  .section-py {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-py {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 }
