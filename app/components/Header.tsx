@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const navLinks = [
@@ -28,11 +29,17 @@ export default function Header() {
         scrolled ? 'bg-white shadow-md' : 'bg-white'
       }`}
     >
-      <div className="max-w-content mx-auto px-4 flex items-center justify-between h-16">
+      <div className="max-w-content mx-auto px-4 flex items-center justify-between h-20 md:h-24">
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-serif text-[#1a1a2e] text-lg leading-tight">Bozhiqi</span>
-          <span className="text-xs text-[#6b7280] leading-tight font-sans">Painting & Decorating</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Bozhiqi Painting & Decorating"
+            width={200}
+            height={60}
+            className="h-12 w-auto md:h-14 lg:h-16"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
