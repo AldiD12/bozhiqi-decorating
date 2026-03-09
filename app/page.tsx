@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import FAQAccordion from '@/app/components/FAQAccordion';
 import { locations } from '@/app/data/locations';
@@ -127,20 +128,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Project photo slot — replace bg-[#2d2d4e] div with next/image once photos are available */}
+          {/* Hero project photo */}
           <div className="hidden md:block">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-[#2d2d4e] to-[#1a1a2e] border border-[#3a3a5e]">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                <div className="w-12 h-[2px] bg-[#b8860b] rounded mb-4 mx-auto" />
-                <p className="text-[#e8e4df] text-sm leading-relaxed">
-                  Project photography coming soon.
-                </p>
-                <p className="text-[#6b7280] text-xs mt-2">
-                  View our work on{' '}
-                  <a href="https://www.checkatrade.com/trades/bozhiqi" className="text-[#b8860b] hover:underline" target="_blank" rel="noopener noreferrer">
-                    Checkatrade
-                  </a>
-                </p>
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
+              <Image
+                src="/images/exterior-painting-detached-house-north-london.webp"
+                alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
+                fill
+                priority
+                sizes="(max-width: 1200px) 50vw, 580px"
+                className="object-cover"
+              />
+              {/* Subtle caption badge */}
+              <div className="absolute bottom-4 left-4 bg-[#1a1a2e]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10">
+                Southgate, N14 — Full Exterior Repaint
               </div>
             </div>
           </div>
@@ -176,6 +177,40 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Photo Strip */}
+      <section className="bg-[#1a1a2e] py-6 overflow-hidden" aria-label="Project photo highlights">
+        <div className="flex gap-3 px-4 max-w-content mx-auto md:grid md:grid-cols-4 md:gap-4">
+          {[
+            {
+              src: '/images/interior-painting-panelled-reception-room-herringbone.webp',
+              alt: 'Panelled reception room with white walls and herringbone floor',
+            },
+            {
+              src: '/images/exterior-painting-victorian-terraces-white-blue-london.webp',
+              alt: 'Victorian terraced houses repainted white and blue',
+            },
+            {
+              src: '/images/interior-painting-kitchen-navy-shaker-cabinets.webp',
+              alt: 'Navy shaker kitchen with brass handles',
+            },
+            {
+              src: '/images/plastering-painting-hallway-arched-ceiling.webp',
+              alt: 'Hallway with arched plastered and painted ceiling',
+            },
+          ].map((photo) => (
+            <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden flex-shrink-0 w-[70vw] md:w-auto">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 768px) 70vw, 25vw"
+                className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
