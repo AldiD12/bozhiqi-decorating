@@ -49,7 +49,6 @@ export default function Header() {
             priority
           />
         </Link>
-        </Link>
 
         <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
           {navLinks.map((link) => (
