@@ -248,6 +248,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Complete Wall Specialist */}
+      <section className="bg-white section-py">
+        <div className="max-w-content mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="brass-divider mx-auto" aria-hidden="true" />
+            <div className="text-center mb-10">
+              <h2 className="font-serif text-[#1a1a2e] mb-4">Complete Wall Specialist</h2>
+              <p className="text-[#6b7280] text-lg max-w-2xl mx-auto">
+                Most painters can't plaster. Most plasterers don't paint. We do both — professionally.
+              </p>
+            </div>
+            
+            <div className="bg-[#faf8f5] rounded-2xl p-8 md:p-12 border border-[#e8e4df] mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="font-serif text-[#1a1a2e] text-2xl mb-4">From Bare Wall to Beautiful Finish</h3>
+                  <p className="text-[#3d3d3d] leading-relaxed mb-4">
+                    Why hire two separate tradesmen when you can get both services from one experienced professional? 
+                    Our plaster-to-paint service eliminates coordination headaches and ensures perfect compatibility 
+                    between preparation and finish.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
+                      <span className="text-[#3d3d3d] text-sm">Professional plastering</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
+                      <span className="text-[#3d3d3d] text-sm">Perfect paint finish</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
+                      <span className="text-[#3d3d3d] text-sm">One team, one quote</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
+                      <span className="text-[#3d3d3d] text-sm">Complete guarantee</span>
+                    </div>
+                  </div>
+                  <Link 
+                    href="/services/plaster-to-paint" 
+                    className="inline-flex items-center gap-2 bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all"
+                  >
+                    Learn More About Our Complete Wall Service
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(26,26,46,0.15)]">
+                  <Image
+                    src="/images/plastering-painting-hallway-arched-ceiling.webp"
+                    alt="Professional plastering and painting service showing complete wall transformation"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-[#1a1a2e]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10">
+                    Complete Wall Service
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-[#6b7280] text-sm mb-4">
+                <strong>Why choose our complete wall service?</strong> No coordination between different tradesmen, 
+                no compatibility issues, no finger-pointing if something goes wrong. One professional, one guarantee, perfect results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3-Step Process */}
       <section className="bg-white section-py">
         <div className="max-w-content mx-auto px-4">
