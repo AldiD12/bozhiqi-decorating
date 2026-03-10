@@ -80,40 +80,40 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[#0f172a] text-white overflow-hidden min-h-[600px] md:min-h-[700px]">
+      <section className="relative bg-[#0f172a] text-white overflow-hidden min-h-[700px] md:min-h-[800px]">
         {/* Subtle radial glow for depth */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
         </div>
 
-        <div className="relative max-w-content mx-auto px-4 py-16 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
-          {/* Text content */}
-          <div className="pb-8 md:pb-0">
+        <div className="relative max-w-content mx-auto px-4 py-20 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
+          {/* Text content - Mobile-first design */}
+          <div className="pb-12 md:pb-0">
             {/* Brass accent bar above H1 */}
-            <div className="w-12 h-1 bg-[#b8860b] mb-6" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-6 leading-tight text-4xl md:text-6xl font-normal tracking-tight">
+            <div className="w-16 h-1 bg-[#b8860b] mb-8" aria-hidden="true" />
+            <h1 className="font-serif text-white mb-8 leading-tight text-5xl md:text-6xl font-normal tracking-tight">
               Professional Painters &amp; Decorators in North London
             </h1>
-            <p className="text-white text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
+            <p className="text-white text-xl md:text-2xl leading-relaxed mb-10 max-w-xl">
               Meticulous painting, wallpaper installation, and plastering across North &amp; South London.
               Clean finishes, on time, every time.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col gap-4 mb-10">
               <Link
                 href="/contact"
-                className="bg-[#b8860b] text-white font-semibold px-8 py-4 text-center hover:bg-[#b8860b]/90 transition-all duration-300 ease-in-out text-base shadow-lg"
+                className="bg-[#b8860b] text-white font-semibold px-10 py-5 text-center hover:bg-[#b8860b]/90 transition-all duration-300 ease-in-out text-lg shadow-lg"
               >
                 Get a Free Quote
               </Link>
               <a
                 href="tel:07828288449"
-                className="border-2 border-white/40 text-white font-semibold px-8 py-4 text-center hover:border-white hover:bg-white hover:text-[#0f172a] transition-all duration-300 ease-in-out text-base"
+                className="border-2 border-white/40 text-white font-semibold px-10 py-5 text-center hover:border-white hover:bg-white hover:text-[#0f172a] transition-all duration-300 ease-in-out text-lg"
               >
                 Call 07828 288 449
               </a>
             </div>
-            {/* Trust signals - improved visibility */}
-            <div className="flex flex-wrap gap-3">
+            {/* Trust signals - Mobile optimized */}
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               {[
                 { text: reviews.google.short, highlight: true },
                 { text: reviews.checkatrade.short, highlight: true },
@@ -122,7 +122,7 @@ export default function HomePage() {
               ].map((pill) => (
                 <span
                   key={pill.text}
-                  className={`text-sm font-semibold px-3 py-2 border transition-all duration-300 ${
+                  className={`text-sm font-semibold px-4 py-3 border transition-all duration-300 ${
                     pill.highlight 
                       ? 'text-[#b8860b] bg-[#b8860b]/15 border-[#b8860b]/40' 
                       : 'text-white bg-white/10 border-white/30'
@@ -134,8 +134,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero project photo — full bleed on mobile, rounded card on desktop */}
-          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-xl mt-8 md:mt-0">
+          {/* Hero project photo — Mobile optimized */}
+          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-xl mt-12 md:mt-0">
             <Image
               src="/images/exterior-painting-detached-house-north-london.webp"
               alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"

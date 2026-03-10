@@ -39,14 +39,14 @@ export default function Header() {
         scrolled ? 'shadow-sm' : ''
       }`}
     >
-      <div className="max-w-content mx-auto px-4 flex items-center justify-between h-20 md:h-24">
+      <div className="max-w-content mx-auto px-4 flex items-center justify-between h-24 md:h-28">
         <Link href="/" className="flex items-center" aria-label="Bozhiqi Painting & Decorating — home">
           <Image
             src="/logo.png"
             alt="Bozhiqi Painting & Decorating"
-            width={200}
-            height={60}
-            className="h-12 w-auto md:h-14 lg:h-16"
+            width={240}
+            height={80}
+            className="h-16 w-auto md:h-18 lg:h-20"
             priority
           />
         </Link>
