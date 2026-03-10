@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bozhiqidecorating.co.uk/services/wallpaper-installation',
   },
+  openGraph: {
+    title: 'Wallpaper Installation London | Bozhiqi Painting & Decorating',
+    description: 'Professional wallpaper installation across London. All paper types, pattern matching, feature walls. 15 years experience.',
+    url: 'https://bozhiqidecorating.co.uk/services/wallpaper-installation',
+  },
 };
 
 const serviceSchema = {

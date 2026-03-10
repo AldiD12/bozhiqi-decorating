@@ -30,9 +30,9 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: reviews.google.score,
-      reviewCount: String(reviews.google.count),
-      bestRating: reviews.google.outOf,
+      ratingValue: reviews.checkatrade.score,
+      reviewCount: String(reviews.checkatrade.count),
+      bestRating: reviews.checkatrade.outOf,
       worstRating: '1',
     },
     priceRange: '££',

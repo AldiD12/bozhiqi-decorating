@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bozhiqidecorating.co.uk/services/exterior-painting',
   },
+  openGraph: {
+    title: 'Exterior Painting London | Bozhiqi Painting & Decorating',
+    description: 'Professional exterior painting across London. Masonry, render, pebbledash, fascias & soffits. 15 years experience.',
+    url: 'https://bozhiqidecorating.co.uk/services/exterior-painting',
+  },
 };
 
 const serviceSchema = {

@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bozhiqidecorating.co.uk/services/woodwork-painting',
   },
+  openGraph: {
+    title: 'Woodwork Painting London | Doors, Skirting & Frames | Bozhiqi',
+    description: 'Professional woodwork painting across London. Skirting boards, door frames, bannisters, window frames. Gloss & satinwood specialists.',
+    url: 'https://bozhiqidecorating.co.uk/services/woodwork-painting',
+  },
 };
 
 const serviceSchema = {

@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bozhiqidecorating.co.uk/services/plastering',
   },
+  openGraph: {
+    title: 'Plastering Services London | Bozhiqi Painting & Decorating',
+    description: 'Professional plastering across London. Skim coats, bonding, Artex removal, crack repair, coving. 15 years experience.',
+    url: 'https://bozhiqidecorating.co.uk/services/plastering',
+  },
 };
 
 const serviceSchema = {
