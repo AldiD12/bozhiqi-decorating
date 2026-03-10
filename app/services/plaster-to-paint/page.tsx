@@ -65,14 +65,14 @@ export default function PlasterToPaintPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1a1a2e] text-white">
+      <section className="bg-[#0f172a] text-white">
         <div className="max-w-content mx-auto px-4 pt-10 md:py-20 md:grid md:grid-cols-2 md:gap-12 md:items-center">
           <div className="pb-8 md:pb-0">
-            <div className="w-10 h-[3px] bg-[#b8860b] rounded mb-5" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-6">
+            <div className="w-10 h-[3px] bg-[#b8860b] mb-5" aria-hidden="true" />
+            <h1 className="font-serif text-white mb-6 text-4xl md:text-6xl font-normal tracking-tight">
               Complete Wall Specialist: Plaster to Paint
             </h1>
-            <p className="text-[#e8e4df] text-lg mb-6 leading-relaxed">
+            <p className="text-white text-lg md:text-xl mb-6 leading-relaxed">
               From bare walls to beautiful finishes. One team, one call, complete service. 
               Professional plastering and painting under one roof.
             </p>
@@ -86,20 +86,20 @@ export default function PlasterToPaintPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/contact" 
-                className="bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all text-center"
+                className="bg-[#b8860b] text-white font-semibold px-6 py-3 hover:bg-[#b8860b]/90 transition-all text-center"
               >
                 Get a Free Quote
               </Link>
               <a 
                 href="tel:07828288449" 
-                className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all text-center"
+                className="border-2 border-white text-white font-semibold px-6 py-3 hover:bg-white hover:text-[#0f172a] transition-all text-center"
               >
                 Call 07828 288 449
               </a>
             </div>
           </div>
 
-          <div className="relative -mx-4 md:mx-0 aspect-[16/10] md:aspect-[4/3] md:rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
+          <div className="relative -mx-4 md:mx-0 aspect-[16/10] md:aspect-[4/3] md:rounded-lg overflow-hidden shadow-xl">
             <Image
               src="/images/plastering-bathroom-venetian-plaster-warm-finish.webp"
               alt="Professional plastering and painting service showing smooth wall finish"
@@ -113,26 +113,26 @@ export default function PlasterToPaintPage() {
       </section>
 
       {/* The Problem */}
-      <section className="bg-white section-py">
+      <section className="bg-white py-20 md:py-32">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="brass-divider" aria-hidden="true" />
-            <h2 className="font-serif text-[#1a1a2e] mb-6">Why Most Decorators Can't Offer This Service</h2>
-            <p className="text-[#3d3d3d] leading-relaxed mb-5 text-lg">
+            <div className="w-16 h-[2px] bg-[#b8860b] mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-[#0f172a] mb-6 text-3xl md:text-5xl font-normal tracking-tight">Why Most Decorators Can't Offer This Service</h2>
+            <p className="text-[#3d3d3d] leading-relaxed mb-5 text-lg md:text-xl">
               Most painting and decorating companies don't offer plastering. It's a specialist skill that requires different tools, 
               materials, and expertise. This means you typically need to hire two separate tradesmen.
             </p>
-            <p className="text-[#3d3d3d] leading-relaxed mb-5">
+            <p className="text-[#3d3d3d] leading-relaxed mb-5 text-lg md:text-xl">
               The problem? Coordinating schedules, ensuring compatibility between prep and finish work, and dealing with 
               potential finger-pointing if something goes wrong. "The plasterer says it's the painter's fault, 
               the painter blames the plaster."
             </p>
-            <p className="text-[#3d3d3d] leading-relaxed mb-8">
+            <p className="text-[#3d3d3d] leading-relaxed mb-8 text-lg md:text-xl">
               With Bozhiqi, you get both services from one experienced professional. We take full responsibility 
               for the entire process, from bare wall to perfect finish.
             </p>
 
-            <div className="bg-[#faf8f5] rounded-2xl p-8 border border-[#e8e4df]">
+            <div className="bg-[#faf8f5] rounded-lg p-8 border border-[#e8e4df]">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-[#b8860b] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -140,7 +140,7 @@ export default function PlasterToPaintPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-serif text-[#1a1a2e] text-xl mb-3">The Bozhiqi Advantage</h3>
+                  <h3 className="font-serif text-[#0f172a] text-xl mb-3 font-normal">The Bozhiqi Advantage</h3>
                   <p className="text-[#3d3d3d] leading-relaxed">
                     Professional plasterer AND painter in one. No coordination headaches, no compatibility issues, 
                     no finger-pointing. One team, one quote, one guarantee covering the entire job.

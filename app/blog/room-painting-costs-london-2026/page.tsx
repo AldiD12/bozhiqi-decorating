@@ -100,12 +100,12 @@ export default function RoomPaintingCostsPage() {
       </section>
 
       {/* Article Header */}
-      <section className="bg-white section-py">
+      <section className="bg-white py-20 md:py-32">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">
               <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="text-xs font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-2 py-1 rounded">
+                <span className="text-sm font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-2 py-1">
                   Pricing Guide
                 </span>
                 <span className="text-[#6b7280] text-sm">March 10, 2026</span>
@@ -114,16 +114,16 @@ export default function RoomPaintingCostsPage() {
                 <span className="text-[#6b7280] text-sm">•</span>
                 <span className="text-[#6b7280] text-sm">By Jetmir Bozhiqi</span>
               </div>
-              <h1 className="font-serif text-[#1a1a2e] mb-4">
+              <h1 className="font-serif text-[#0f172a] mb-4 text-4xl md:text-6xl font-normal tracking-tight">
                 How Much Does It Cost to Paint a Room in London? (2026 Prices)
               </h1>
-              <p className="text-[#3d3d3d] text-lg leading-relaxed">
+              <p className="text-[#3d3d3d] text-lg md:text-xl leading-relaxed">
                 Complete breakdown of room painting costs in London for 2026, based on real project data 
                 from {reviews.yearsExperience} years of professional decorating experience.
               </p>
             </div>
 
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-8 shadow-[0_8px_32px_rgba(26,26,46,0.12)]">
+            <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-8 shadow-xl">
               <Image
                 src="/images/interior-painting-open-plan-dining-room-neutral.webp"
                 alt="Professional room painting showing neutral walls in open plan dining room"

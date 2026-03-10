@@ -64,14 +64,14 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1a1a2e] text-white">
+      <section className="bg-[#0f172a] text-white">
         <div className="max-w-content mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-10 h-[3px] bg-[#b8860b] rounded mb-5 mx-auto" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-6">
+            <div className="w-10 h-[3px] bg-[#b8860b] mb-5 mx-auto" aria-hidden="true" />
+            <h1 className="font-serif text-white mb-6 text-4xl md:text-6xl font-normal tracking-tight">
               Painting & Decorating Expert Advice
             </h1>
-            <p className="text-[#e8e4df] text-lg mb-8 leading-relaxed">
+            <p className="text-white text-lg md:text-xl mb-8 leading-relaxed">
               {reviews.yearsExperience} years of professional experience distilled into practical guides, 
               honest pricing, and expert tips for London homeowners.
             </p>
@@ -79,7 +79,7 @@ export default function BlogPage() {
               {['Pricing Guides', 'Expert Tips', 'Real Projects', 'Honest Advice'].map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-3 py-1.5 rounded-full"
+                  className="text-sm font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-3 py-1.5"
                 >
                   {tag}
                 </span>
@@ -90,24 +90,24 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Posts */}
-      <section className="bg-white section-py">
+      <section className="bg-white py-20 md:py-32">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 gap-8">
               {blogPosts.map((post) => (
-                <article key={post.href} className="bg-[#faf8f5] rounded-2xl p-8 border border-[#e8e4df] hover:shadow-[0_8px_32px_rgba(26,26,46,0.08)] transition-all">
+                <article key={post.href} className="bg-[#faf8f5] rounded-lg p-8 border border-[#e8e4df] hover:shadow-lg transition-all">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="text-xs font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-2 py-1 rounded">
+                    <span className="text-sm font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-2 py-1">
                       {post.category}
                     </span>
                     <span className="text-[#6b7280] text-sm">{post.date}</span>
                     <span className="text-[#6b7280] text-sm">•</span>
                     <span className="text-[#6b7280] text-sm">{post.readTime}</span>
                   </div>
-                  <h2 className="font-serif text-[#1a1a2e] text-2xl mb-3 hover:text-[#b8860b] transition-colors">
+                  <h2 className="font-serif text-[#0f172a] text-2xl md:text-3xl mb-3 hover:text-[#b8860b] transition-colors font-normal tracking-tight">
                     <Link href={post.href}>{post.title}</Link>
                   </h2>
-                  <p className="text-[#3d3d3d] leading-relaxed mb-4">{post.excerpt}</p>
+                  <p className="text-[#3d3d3d] leading-relaxed mb-4 text-lg">{post.excerpt}</p>
                   <Link 
                     href={post.href}
                     className="inline-flex items-center gap-2 text-[#b8860b] font-semibold hover:underline"
@@ -125,22 +125,22 @@ export default function BlogPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1a1a2e] section-py">
+      <section className="bg-[#0f172a] py-20 md:py-32">
         <div className="max-w-content mx-auto px-4 text-center">
-          <h2 className="font-serif text-white mb-4">Need Professional Advice for Your Project?</h2>
-          <p className="text-[#e8e4df] mb-8 max-w-xl mx-auto">
+          <h2 className="font-serif text-white mb-4 text-3xl md:text-4xl font-normal tracking-tight">Need Professional Advice for Your Project?</h2>
+          <p className="text-white mb-8 max-w-xl mx-auto text-lg">
             Get expert guidance and a fixed-price quote for your painting and decorating project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/contact" 
-              className="bg-[#b8860b] text-white font-semibold px-8 py-4 rounded-lg hover:bg-[#9a7009] transition-all"
+              className="bg-[#b8860b] text-white font-semibold px-8 py-4 hover:bg-[#b8860b]/90 transition-all"
             >
               Get a Free Quote
             </Link>
             <a 
               href="tel:07828288449" 
-              className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-[#1a1a2e] transition-all"
+              className="border-2 border-white text-white font-semibold px-8 py-4 hover:bg-white hover:text-[#0f172a] transition-all"
             >
               Call 07828 288 449
             </a>
