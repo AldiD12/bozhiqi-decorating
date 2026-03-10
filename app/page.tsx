@@ -3,18 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FAQAccordion from '@/app/components/FAQAccordion';
 import { locations } from '@/app/data/locations';
+import { reviews } from '@/app/data/reviews';
 
 export const metadata: Metadata = {
   title: 'Painters & Decorators in North London | Bozhiqi',
   description:
-    'Professional painting & decorating in North London. 9.78/10 on Checkatrade from 55 reviews. 15 years experience. Get a free quote today.',
+    `Professional painting & decorating in North London. ${reviews.checkatrade.summary}. ${reviews.yearsExperience} years experience. Get a free quote today.`,
   alternates: {
     canonical: 'https://bozhiqidecorating.co.uk/',
   },
   openGraph: {
     title: 'Painters & Decorators in North London | Bozhiqi',
     description:
-      'Professional painting & decorating in North London. 9.78/10 on Checkatrade from 55 reviews. 15 years experience.',
+      `Professional painting & decorating in North London. ${reviews.checkatrade.summary}. ${reviews.yearsExperience} years experience.`,
     url: 'https://bozhiqidecorating.co.uk/',
   },
 };
@@ -114,9 +115,9 @@ export default function HomePage() {
             {/* Social proof pills */}
             <div className="flex flex-wrap gap-3">
               {[
-                { text: '★★★★★ 5.0 Google' },
-                { text: '9.78/10 Checkatrade' },
-                { text: '15 Years Experience' },
+                { text: reviews.google.short },
+                { text: reviews.checkatrade.short },
+                { text: `${reviews.yearsExperience} Years Experience` },
                 { text: 'Fully Insured' },
               ].map((pill) => (
                 <span
@@ -158,7 +159,7 @@ export default function HomePage() {
             </p>
             <p className="text-[#3d3d3d] text-lg leading-relaxed mb-10">
               Jetmir Bozhiqi has been delivering meticulous, punctual, and respectful decorating services
-              to London homeowners for 15 years. With a 9.78/10 score on Checkatrade from 55 verified
+              to London homeowners for {reviews.yearsExperience} years. With a {reviews.checkatrade.score}/10 score on Checkatrade from {reviews.checkatrade.count} verified
               reviews, the results speak for themselves.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -319,7 +320,7 @@ export default function HomePage() {
           <div className="text-center mb-10">
             <div className="brass-divider mx-auto" aria-hidden="true" />
             <h2 className="font-serif text-[#1a1a2e] mb-3">What Our Clients Say</h2>
-            <p className="text-[#6b7280]">9.78/10 on Checkatrade from 55 verified reviews</p>
+            <p className="text-[#6b7280]">{reviews.checkatrade.summary}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
@@ -355,12 +356,12 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-8">
             <a
-              href="https://www.checkatrade.com/trades/bozhiqi"
+              href={reviews.checkatrade.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border-2 border-[#b8860b] text-[#b8860b] font-semibold px-6 py-3 rounded-lg hover:bg-[#b8860b] hover:text-white transition-all"
             >
-              Read All 55 Reviews on Checkatrade
+              Read All {reviews.checkatrade.count} Reviews on Checkatrade
             </a>
           </div>
         </div>

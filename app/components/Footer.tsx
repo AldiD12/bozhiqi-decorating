@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { events } from '@/app/lib/track';
+import { reviews } from '@/app/data/reviews';
 
 export default function Footer() {
   return (
@@ -13,7 +14,7 @@ export default function Footer() {
             <div className="font-serif text-2xl text-[#faf8f5] mb-2">Bozhiqi</div>
             <div className="text-sm text-[#6b7280] mb-4">Painting & Decorating</div>
             <p className="text-sm text-[#e8e4df] leading-relaxed">
-              15 years of meticulous painting & decorating across North & South London. Fully insured. Checkatrade verified.
+              {reviews.yearsExperience} years of meticulous painting & decorating across North & South London. Fully insured. Checkatrade verified.
             </p>
           </div>
 
@@ -73,7 +74,7 @@ export default function Footer() {
 
             <div className="mt-6">
               <a
-                href="https://www.checkatrade.com/trades/bozhiqi"
+                href={reviews.checkatrade.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={events.checkatradeClick}

@@ -4,6 +4,7 @@ import Breadcrumb from '@/app/components/Breadcrumb';
 import FAQAccordion from '@/app/components/FAQAccordion';
 import NearbyLocations from '@/app/components/NearbyLocations';
 import { Location, getNearbyLocations } from '@/app/data/locations';
+import { reviews } from '@/app/data/reviews';
 
 interface LocationPageTemplateProps {
   location: Location;
@@ -29,9 +30,9 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '1',
-      bestRating: '5',
+      ratingValue: reviews.google.score,
+      reviewCount: String(reviews.google.count),
+      bestRating: reviews.google.outOf,
       worstRating: '1',
     },
     priceRange: '££',
@@ -80,14 +81,14 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
             <h1 className="font-serif text-white">Painters & Decorators in {location.name}</h1>
             <p className="text-[#e8e4df] text-lg mt-4 max-w-2xl">
               Professional painting, decorating, and plastering in {location.name} ({location.postcode}).
-              9.78/10 on Checkatrade. Fully insured. Free quotes.
+              {reviews.checkatrade.score}/10 on Checkatrade. Fully insured. Free quotes.
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#b8860b] font-semibold mt-4 mb-6">
-              <span>★★★★★ 5.0 Google</span>
+              <span>{reviews.google.short}</span>
               <span className="text-[#6b7280]">|</span>
-              <span>9.78/10 Checkatrade</span>
+              <span>{reviews.checkatrade.short}</span>
               <span className="text-[#6b7280]">|</span>
-              <span>15 Years Experience</span>
+              <span>{reviews.yearsExperience} Years Experience</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all text-center">
@@ -231,7 +232,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
               {Array.from({ length: 5 }).map((_, i) => <span key={i} className="text-[#b8860b] text-2xl">★</span>)}
             </div>
             <p className="text-[#6b7280] mb-6">
-              9.78/10 on Checkatrade from 55 verified reviews · 5.0 stars on Google
+              {reviews.checkatrade.summary} · {reviews.google.score} stars on Google
             </p>
             <div className="bg-[#faf8f5] rounded-xl p-6 border border-[#e8e4df] text-left">
               <p className="text-[#3d3d3d] italic leading-relaxed mb-4">
@@ -240,12 +241,12 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
               <p className="font-semibold text-[#1a1a2e] text-sm">Verified Checkatrade Review</p>
             </div>
             <a
-              href="https://www.checkatrade.com/trades/bozhiqi"
+              href={reviews.checkatrade.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-6 border-2 border-[#b8860b] text-[#b8860b] font-semibold px-6 py-3 rounded-lg hover:bg-[#b8860b] hover:text-white transition-all"
             >
-              Read All 55 Reviews on Checkatrade
+              Read All {reviews.checkatrade.count} Reviews on Checkatrade
             </a>
           </div>
         </div>

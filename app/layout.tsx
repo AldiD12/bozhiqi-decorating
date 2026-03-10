@@ -6,6 +6,7 @@ import TrustBar from '@/app/components/TrustBar';
 import MobileStickyFooter from '@/app/components/MobileStickyFooter';
 import CookieBanner from '@/app/components/CookieBanner';
 import GoogleAnalytics from '@/app/components/GoogleAnalytics';
+import { reviews } from '@/app/data/reviews';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bozhiqidecorating.co.uk'),
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     template: '%s | Bozhiqi Painting & Decorating',
   },
   description:
-    'Professional painting & decorating in North London. 9.78/10 on Checkatrade from 55 reviews. 15 years experience. Get a free quote today.',
+    `Professional painting & decorating in North London. ${reviews.checkatrade.summary}. ${reviews.yearsExperience} years experience. Get a free quote today.`,
   openGraph: {
     siteName: 'Bozhiqi Painting & Decorating',
     locale: 'en_GB',
@@ -48,9 +49,9 @@ const organizationSchema = {
   },
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '1',
-    bestRating: '5',
+    ratingValue: reviews.google.score,
+    reviewCount: String(reviews.google.count),
+    bestRating: reviews.google.outOf,
     worstRating: '1',
   },
   priceRange: '££',

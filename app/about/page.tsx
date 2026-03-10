@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumb from '@/app/components/Breadcrumb';
+import { reviews } from '@/app/data/reviews';
 
 export const metadata: Metadata = {
   title: 'About Jetmir Bozhiqi | 15 Years Experience | Bozhiqi',
@@ -27,7 +28,7 @@ const personSchema = {
     name: 'Bozhiqi Painting & Decorating',
     url: 'https://bozhiqidecorating.co.uk',
   },
-  sameAs: ['https://www.checkatrade.com/trades/bozhiqi'],
+  sameAs: [reviews.checkatrade.url],
   description:
     '15 years of professional painting & decorating across London. Fully insured, Checkatrade verified.',
 };
@@ -68,8 +69,8 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
                 {[
                   { label: '15+', sub: 'Years Experience' },
-                  { label: '9.78', sub: 'Checkatrade Score' },
-                  { label: '55+', sub: 'Verified Reviews' },
+                  { label: reviews.checkatrade.score, sub: 'Checkatrade Score' },
+                  { label: `${reviews.checkatrade.count}+`, sub: 'Verified Reviews' },
                   { label: '100%', sub: 'Fully Insured' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
@@ -151,7 +152,7 @@ export default function AboutPage() {
           <h2 className="font-serif text-[#1a1a2e] mb-8 text-center">Credentials & Accreditations</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { label: 'Checkatrade Verified', detail: '9.78/10 from 55 reviews' },
+              { label: 'Checkatrade Verified', detail: `${reviews.checkatrade.score}/10 from ${reviews.checkatrade.count} reviews` },
               { label: 'MyBuilder Recommended', detail: '2 verified reviews' },
               { label: 'Fully Public Liability Insured', detail: 'All projects covered' },
               { label: '15 Years Professional Experience', detail: 'Since 2011' },
