@@ -81,38 +81,58 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative bg-[#0f172a] text-white overflow-hidden min-h-[700px] md:min-h-[800px]">
-        {/* Subtle radial glow for depth */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
+        {/* Background Image with Parallax Effect */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/interior-painting-panelled-reception-room-herringbone.webp"
+            alt="Professional painting work background"
+            fill
+            className="object-cover opacity-25 scale-105 transition-transform duration-1000 ease-out"
+            priority
+          />
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/90 via-[#0f172a]/80 to-[#0f172a]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/60 via-transparent to-[#0f172a]/80"></div>
         </div>
 
-        <div className="relative max-w-content mx-auto px-4 py-20 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
-          {/* Text content - Mobile-first design */}
+        {/* Dynamic brass glow effects */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.08] blur-3xl translate-x-1/3 -translate-y-1/4 animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#b8860b] opacity-[0.04] blur-2xl -translate-x-1/4 translate-y-1/4"></div>
+        </div>
+
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23ffffff' points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+
+        <div className="relative z-10 max-w-content mx-auto px-4 py-20 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
+          {/* Text content - Enhanced with better shadows */}
           <div className="pb-12 md:pb-0">
-            {/* Brass accent bar above H1 */}
-            <div className="w-16 h-1 bg-[#b8860b] mb-8" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-8 leading-tight text-5xl md:text-6xl font-normal tracking-tight">
+            {/* Animated brass accent bar */}
+            <div className="w-16 h-1 bg-[#b8860b] mb-8 shadow-lg shadow-[#b8860b]/30" aria-hidden="true" />
+            <h1 className="font-serif text-white mb-8 leading-tight text-5xl md:text-6xl font-normal tracking-tight drop-shadow-2xl">
               Professional Painters &amp; Decorators in North London
             </h1>
-            <p className="text-white text-xl md:text-2xl leading-relaxed mb-10 max-w-xl">
+            <p className="text-white text-xl md:text-2xl leading-relaxed mb-10 max-w-xl drop-shadow-lg">
               Meticulous painting, wallpaper installation, and plastering across North &amp; South London.
               Clean finishes, on time, every time.
             </p>
             <div className="flex flex-col gap-4 mb-10">
               <Link
                 href="/contact"
-                className="bg-[#b8860b] text-white font-semibold px-10 py-5 text-center hover:bg-[#b8860b]/90 transition-all duration-300 ease-in-out text-lg shadow-lg"
+                className="bg-[#b8860b] text-white font-semibold px-10 py-5 text-center hover:bg-[#b8860b]/90 transition-all duration-300 ease-in-out text-lg shadow-2xl hover:shadow-[#b8860b]/30 hover:scale-[1.02] transform"
               >
                 Get a Free Quote
               </Link>
               <a
                 href="tel:07828288449"
-                className="border-2 border-white/40 text-white font-semibold px-10 py-5 text-center hover:border-white hover:bg-white hover:text-[#0f172a] transition-all duration-300 ease-in-out text-lg"
+                className="border-2 border-white/60 text-white font-semibold px-10 py-5 text-center hover:border-white hover:bg-white/10 hover:text-white transition-all duration-300 ease-in-out text-lg backdrop-blur-md shadow-lg"
               >
                 Call 07828 288 449
               </a>
             </div>
-            {/* Trust signals - Mobile optimized */}
+            {/* Enhanced trust signals */}
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               {[
                 { text: reviews.google.short, highlight: true },
@@ -122,10 +142,10 @@ export default function HomePage() {
               ].map((pill) => (
                 <span
                   key={pill.text}
-                  className={`text-sm font-semibold px-4 py-3 border transition-all duration-300 ${
+                  className={`text-sm font-semibold px-4 py-3 border transition-all duration-300 backdrop-blur-md shadow-lg ${
                     pill.highlight 
-                      ? 'text-[#b8860b] bg-[#b8860b]/15 border-[#b8860b]/40' 
-                      : 'text-white bg-white/10 border-white/30'
+                      ? 'text-[#b8860b] bg-[#b8860b]/20 border-[#b8860b]/60 shadow-[#b8860b]/20' 
+                      : 'text-white bg-white/15 border-white/50 shadow-white/10'
                   }`}
                 >
                   {pill.text}
@@ -134,8 +154,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero project photo — Mobile optimized */}
-          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-xl mt-12 md:mt-0">
+          {/* Enhanced hero project photo */}
+          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-2xl mt-12 md:mt-0 border border-white/20 hover:scale-[1.02] transition-transform duration-500">
             <Image
               src="/images/exterior-painting-detached-house-north-london.webp"
               alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
@@ -144,7 +164,8 @@ export default function HomePage() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
               className="object-cover"
             />
-            <div className="absolute bottom-4 left-4 bg-[#0f172a]/90 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 border border-white/20">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-4 left-4 bg-[#0f172a]/90 backdrop-blur-md text-white text-sm font-semibold px-4 py-2 border border-white/30 shadow-lg">
               Southgate, N14 — Full Exterior Repaint
             </div>
           </div>
