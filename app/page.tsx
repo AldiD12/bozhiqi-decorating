@@ -80,34 +80,34 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[#1a1a2e] text-white overflow-hidden">
+      <section className="relative bg-oxford text-white overflow-hidden">
         {/* Subtle radial glow for depth */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-brass opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
         </div>
 
-        <div className="relative max-w-content mx-auto px-4 pt-10 md:py-24 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
+        <div className="relative max-w-content mx-auto px-4 pt-10 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
           {/* Text content */}
           <div className="pb-8 md:pb-0">
             {/* Brass accent bar above H1 */}
-            <div className="w-10 h-[3px] bg-[#b8860b] rounded mb-5" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-6 leading-tight">
+            <div className="w-10 h-[3px] bg-brass rounded mb-5" aria-hidden="true" />
+            <h1 className="font-serif text-white mb-6 leading-tight text-h1-mobile md:text-h1-desktop font-normal tracking-tight">
               Professional Painters &amp; Decorators in North London
             </h1>
-            <p className="text-[#c8c4be] text-lg leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/80 text-body-mobile md:text-body-desktop leading-relaxed mb-8 max-w-xl">
               Meticulous painting, wallpaper installation, and plastering across North &amp; South London.
               Clean finishes, on time, every time.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Link
                 href="/contact"
-                className="bg-[#b8860b] text-white font-semibold px-8 py-4 rounded-lg text-center hover:bg-[#9a7009] transition-all hover:scale-[1.02] text-base shadow-[0_4px_16px_rgba(184,134,11,0.35)]"
+                className="bg-brass text-white font-semibold px-8 py-4 text-center hover:bg-brass/90 transition-all duration-300 ease-in-out text-base shadow-lg"
               >
                 Get a Free Quote
               </Link>
               <a
                 href="tel:07828288449"
-                className="border-2 border-[#4a4a6e] text-white font-semibold px-8 py-4 rounded-lg text-center hover:border-white transition-all text-base"
+                className="border-2 border-white/30 text-white font-semibold px-8 py-4 text-center hover:border-white hover:bg-white hover:text-oxford transition-all duration-300 ease-in-out text-base"
               >
                 Call 07828 288 449
               </a>
@@ -122,7 +122,7 @@ export default function HomePage() {
               ].map((pill) => (
                 <span
                   key={pill.text}
-                  className="text-xs font-semibold text-[#b8860b] bg-[#b8860b]/10 border border-[#b8860b]/25 px-3 py-1.5 rounded-full"
+                  className="text-label font-semibold text-brass bg-brass/10 border border-brass/25 px-3 py-1.5 uppercase tracking-wider"
                 >
                   {pill.text}
                 </span>
@@ -131,7 +131,7 @@ export default function HomePage() {
           </div>
 
           {/* Hero project photo — full bleed on mobile, rounded card on desktop */}
-          <div className="relative -mx-4 md:mx-0 aspect-[16/10] md:aspect-[4/3] md:rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.4)] mt-8 md:mt-0">
+          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-md mt-8 md:mt-0">
             <Image
               src="/images/exterior-painting-detached-house-north-london.webp"
               alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
@@ -140,7 +140,7 @@ export default function HomePage() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
               className="object-cover"
             />
-            <div className="absolute bottom-4 left-4 bg-[#1a1a2e]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10">
+            <div className="absolute bottom-4 left-4 bg-oxford/80 backdrop-blur-sm text-white text-label font-semibold px-3 py-1.5 border border-white/10 uppercase tracking-wider">
               Southgate, N14 — Full Exterior Repaint
             </div>
           </div>
@@ -148,16 +148,16 @@ export default function HomePage() {
       </section>
 
       {/* Pain & Agitation */}
-      <section className="bg-white section-py">
+      <section className="bg-white py-20 md:py-32">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="brass-divider mx-auto" aria-hidden="true" />
-            <h2 className="font-serif text-[#1a1a2e] mb-6">Tired of Unreliable Decorators?</h2>
-            <p className="text-[#3d3d3d] text-lg leading-relaxed mb-6">
+            <div className="w-16 h-[2px] bg-brass mx-auto mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-oxford mb-6 text-h2-mobile md:text-h2-desktop font-normal tracking-tight">Tired of Unreliable Decorators?</h2>
+            <p className="text-slate text-body-mobile md:text-body-desktop leading-relaxed mb-6">
               You&apos;ve been let down before. A decorator who doesn&apos;t show up, cuts corners on
               preparation, leaves a mess, or disappears before the job is done.
             </p>
-            <p className="text-[#3d3d3d] text-lg leading-relaxed mb-10">
+            <p className="text-slate text-body-mobile md:text-body-desktop leading-relaxed mb-10">
               Jetmir Bozhiqi has been delivering meticulous, punctual, and respectful decorating services
               to London homeowners for {reviews.yearsExperience} years. With a {reviews.checkatrade.score}/10 score on Checkatrade from {reviews.checkatrade.count} verified
               reviews, the results speak for themselves.
@@ -168,10 +168,10 @@ export default function HomePage() {
                 { label: 'Dust-free preparation', desc: 'Your home left clean at the end of every day' },
                 { label: '12-month guarantee', desc: 'We stand behind every brush stroke' },
               ].map((item) => (
-                <div key={item.label} className="bg-[#faf8f5] rounded-xl p-6 border border-[#e8e4df]">
-                  <div className="w-8 h-1 bg-[#b8860b] rounded mb-3"></div>
-                  <p className="font-serif text-[#1a1a2e] text-lg mb-1">{item.label}</p>
-                  <p className="text-[#6b7280] text-sm">{item.desc}</p>
+                <div key={item.label} className="bg-ivory rounded-lg p-6 border border-slate-100 shadow-sm">
+                  <div className="w-8 h-1 bg-brass mb-3"></div>
+                  <p className="font-serif text-oxford text-lg mb-1 font-normal">{item.label}</p>
+                  <p className="text-muted text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -180,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* Photo Strip */}
-      <section className="bg-[#1a1a2e] py-6 overflow-hidden" aria-label="Project photo highlights">
+      <section className="bg-oxford py-6 overflow-hidden" aria-label="Project photo highlights">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-4 max-w-content mx-auto">
           {[
             {
@@ -200,7 +200,7 @@ export default function HomePage() {
               alt: 'Hallway with arched plastered and painted ceiling',
             },
           ].map((photo) => (
-            <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden">
+            <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md">
               <Image
                 src={photo.src}
                 alt={photo.alt}
@@ -214,12 +214,12 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="bg-[#faf8f5] section-py">
+      <section className="bg-ivory py-20 md:py-32">
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="brass-divider mx-auto" aria-hidden="true" />
-            <h2 className="font-serif text-[#1a1a2e] mb-4">Our Services</h2>
-            <p className="text-[#6b7280] max-w-xl mx-auto">
+            <div className="w-16 h-[2px] bg-brass mx-auto mb-8" aria-hidden="true" />
+            <h2 className="font-serif text-oxford mb-4 text-h2-mobile md:text-h2-desktop font-normal tracking-tight">Our Services</h2>
+            <p className="text-muted max-w-xl mx-auto text-body-mobile md:text-body-desktop">
               From a single feature wall to a complete exterior repaint — we deliver flawless results on every project.
             </p>
           </div>
@@ -228,68 +228,68 @@ export default function HomePage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(26,26,46,0.06)] hover:shadow-[0_12px_32px_rgba(26,26,46,0.12)] hover:-translate-y-1 transition-all duration-200 group"
+                className="bg-white rounded-lg p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out group"
               >
-                <h3 className="font-serif text-[#1a1a2e] text-xl mb-2">{service.title}</h3>
-                <p className="text-[#6b7280] text-sm leading-relaxed mb-4">{service.description}</p>
-                <span className="text-[#b8860b] text-sm font-semibold group-hover:underline">
+                <h3 className="font-serif text-oxford text-xl mb-2 font-normal">{service.title}</h3>
+                <p className="text-muted text-sm leading-relaxed mb-4">{service.description}</p>
+                <span className="text-brass text-sm font-semibold group-hover:underline">
                   Learn more →
                 </span>
               </Link>
             ))}
             <Link
               href="/services"
-              className="bg-[#1a1a2e] rounded-xl p-6 text-white flex flex-col justify-center items-center text-center hover:bg-[#2d2d4e] transition-all"
+              className="bg-oxford rounded-lg p-6 text-white flex flex-col justify-center items-center text-center hover:bg-oxford/90 transition-all duration-300 ease-in-out"
             >
-              <p className="font-serif text-xl mb-2">All Services</p>
-              <p className="text-[#e8e4df] text-sm">Wall prep, ceiling painting, touch-ups & more</p>
+              <p className="font-serif text-xl mb-2 font-normal">All Services</p>
+              <p className="text-white/80 text-sm">Wall prep, ceiling painting, touch-ups & more</p>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Complete Wall Specialist */}
-      <section className="bg-white section-py">
+      <section className="bg-white py-20 md:py-32">
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="brass-divider mx-auto" aria-hidden="true" />
+            <div className="w-16 h-[2px] bg-brass mx-auto mb-8" aria-hidden="true" />
             <div className="text-center mb-10">
-              <h2 className="font-serif text-[#1a1a2e] mb-4">Complete Wall Specialist</h2>
-              <p className="text-[#6b7280] text-lg max-w-2xl mx-auto">
+              <h2 className="font-serif text-oxford mb-4 text-h2-mobile md:text-h2-desktop font-normal tracking-tight">Complete Wall Specialist</h2>
+              <p className="text-muted text-body-mobile md:text-body-desktop max-w-2xl mx-auto">
                 Most painters can't plaster. Most plasterers don't paint. We do both — professionally.
               </p>
             </div>
             
-            <div className="bg-[#faf8f5] rounded-2xl p-8 md:p-12 border border-[#e8e4df] mb-8">
+            <div className="bg-ivory rounded-lg p-8 md:p-12 border border-slate-100 shadow-sm mb-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="font-serif text-[#1a1a2e] text-2xl mb-4">From Bare Wall to Beautiful Finish</h3>
-                  <p className="text-[#3d3d3d] leading-relaxed mb-4">
+                  <h3 className="font-serif text-oxford text-2xl mb-4 font-normal">From Bare Wall to Beautiful Finish</h3>
+                  <p className="text-slate leading-relaxed mb-4 text-body-mobile md:text-body-desktop">
                     Why hire two separate tradesmen when you can get both services from one experienced professional? 
                     Our plaster-to-paint service eliminates coordination headaches and ensures perfect compatibility 
                     between preparation and finish.
                   </p>
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
-                      <span className="text-[#3d3d3d] text-sm">Professional plastering</span>
+                      <div className="w-2 h-2 bg-brass"></div>
+                      <span className="text-slate text-sm">Professional plastering</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
-                      <span className="text-[#3d3d3d] text-sm">Perfect paint finish</span>
+                      <div className="w-2 h-2 bg-brass"></div>
+                      <span className="text-slate text-sm">Perfect paint finish</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
-                      <span className="text-[#3d3d3d] text-sm">One team, one quote</span>
+                      <div className="w-2 h-2 bg-brass"></div>
+                      <span className="text-slate text-sm">One team, one quote</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#b8860b] rounded-full"></div>
-                      <span className="text-[#3d3d3d] text-sm">Complete guarantee</span>
+                      <div className="w-2 h-2 bg-brass"></div>
+                      <span className="text-slate text-sm">Complete guarantee</span>
                     </div>
                   </div>
                   <Link 
                     href="/services/plaster-to-paint" 
-                    className="inline-flex items-center gap-2 bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all"
+                    className="inline-flex items-center gap-2 bg-brass text-white font-semibold px-6 py-3 hover:bg-brass/90 transition-all duration-300 ease-in-out"
                   >
                     Learn More About Our Complete Wall Service
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -297,7 +297,7 @@ export default function HomePage() {
                     </svg>
                   </Link>
                 </div>
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(26,26,46,0.15)]">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md">
                   <Image
                     src="/images/plastering-painting-hallway-arched-ceiling.webp"
                     alt="Professional plastering and painting service showing complete wall transformation"
@@ -305,7 +305,7 @@ export default function HomePage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
-                  <div className="absolute bottom-4 left-4 bg-[#1a1a2e]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10">
+                  <div className="absolute bottom-4 left-4 bg-oxford/80 backdrop-blur-sm text-white text-label font-semibold px-3 py-1.5 border border-white/10 uppercase tracking-wider">
                     Complete Wall Service
                   </div>
                 </div>
@@ -313,7 +313,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center">
-              <p className="text-[#6b7280] text-sm mb-4">
+              <p className="text-muted text-sm mb-4">
                 <strong>Why choose our complete wall service?</strong> No coordination between different tradesmen, 
                 no compatibility issues, no finger-pointing if something goes wrong. One professional, one guarantee, perfect results.
               </p>

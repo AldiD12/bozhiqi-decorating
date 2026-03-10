@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-shadow duration-300 bg-white ${
-        scrolled ? 'shadow-[0_2px_12px_rgba(26,26,46,0.08)]' : ''
+        scrolled ? 'shadow-sm' : ''
       }`}
     >
       <div className="max-w-content mx-auto px-4 flex items-center justify-between h-20 md:h-24">
@@ -56,7 +56,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[#3d3d3d] hover:text-[#b8860b] text-sm font-semibold transition-colors"
+              className="text-slate hover:text-brass text-sm font-semibold transition-colors duration-300 ease-in-out"
             >
               {link.label}
             </Link>
@@ -68,20 +68,20 @@ export default function Header() {
             href="tel:07828288449"
             onClick={events.callClick}
             aria-label="Call us on 07828 288 449"
-            className="text-sm font-semibold text-[#3d3d3d] hover:text-[#b8860b] transition-colors"
+            className="text-sm font-semibold text-slate hover:text-brass transition-colors duration-300 ease-in-out"
           >
             07828 288 449
           </a>
           <Link
             href="/contact"
-            className="bg-[#b8860b] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#9a7009] transition-all hover:scale-[1.02]"
+            className="bg-brass text-white text-sm font-semibold px-4 py-2 hover:bg-brass/90 transition-all duration-300 ease-in-out"
           >
             Free Quote
           </Link>
         </div>
 
         <button
-          className="md:hidden p-2 text-[#1a1a2e] rounded-lg hover:bg-[#faf8f5] transition-colors"
+          className="md:hidden p-2 text-oxford hover:bg-ivory transition-colors duration-300 ease-in-out"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={menuOpen}
@@ -99,7 +99,7 @@ export default function Header() {
 
       <div
         id="mobile-nav"
-        className={`md:hidden bg-white border-t border-[#e8e4df] shadow-lg transition-all duration-200 overflow-hidden ${
+        className={`md:hidden bg-white border-t border-slate-100 shadow-sm transition-all duration-200 overflow-hidden ${
           menuOpen ? 'max-h-[500px]' : 'max-h-0 border-t-0'
         }`}
         aria-hidden={!menuOpen}
@@ -109,7 +109,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[#3d3d3d] font-semibold py-3 border-b border-[#e8e4df] hover:text-[#b8860b] transition-colors"
+              className="text-slate font-semibold py-3 border-b border-slate-100 hover:text-brass transition-colors duration-300 ease-in-out"
               onClick={() => setMenuOpen(false)}
               tabIndex={menuOpen ? 0 : -1}
             >
@@ -121,14 +121,14 @@ export default function Header() {
               href="tel:07828288449"
               onClick={() => { events.callClick(); setMenuOpen(false); }}
               aria-label="Call us on 07828 288 449"
-              className="text-center border-2 border-[#1a1a2e] text-[#1a1a2e] font-semibold py-3 rounded-lg hover:bg-[#1a1a2e] hover:text-white transition-colors"
+              className="text-center border-2 border-oxford text-oxford font-semibold py-3 hover:bg-oxford hover:text-white transition-all duration-300 ease-in-out"
               tabIndex={menuOpen ? 0 : -1}
             >
               Call 07828 288 449
             </a>
             <Link
               href="/contact"
-              className="text-center bg-[#b8860b] text-white font-semibold py-3 rounded-lg hover:bg-[#9a7009] transition-colors"
+              className="text-center bg-brass text-white font-semibold py-3 hover:bg-brass/90 transition-all duration-300 ease-in-out"
               onClick={() => setMenuOpen(false)}
               tabIndex={menuOpen ? 0 : -1}
             >
