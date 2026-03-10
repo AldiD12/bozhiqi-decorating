@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { DM_Serif_Display, Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
@@ -7,6 +8,21 @@ import MobileStickyFooter from '@/app/components/MobileStickyFooter';
 import CookieBanner from '@/app/components/CookieBanner';
 import GoogleAnalytics from '@/app/components/GoogleAnalytics';
 import { reviews } from '@/app/data/reviews';
+
+// Optimized font loading with Next.js
+const dmSerifDisplay = DM_Serif_Display({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-serif',
+});
+
+const sourceSans3 = Source_Sans_3({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bozhiqidecorating.co.uk'),
@@ -65,21 +81,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" className={`${dmSerifDisplay.variable} ${sourceSans3.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased font-sans">
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <GoogleAnalytics />
         <TrustBar />

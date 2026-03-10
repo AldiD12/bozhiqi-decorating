@@ -23,8 +23,8 @@ const config: Config = {
         charcoal: "#1a1a2e",    // Will migrate to oxford
       },
       fontFamily: {
-        serif: ["'DM Serif Display'", "Georgia", "serif"],
-        sans: ["'Source Sans 3'", "system-ui", "sans-serif"],
+        serif: ['var(--font-serif)', "'DM Serif Display'", "Georgia", "serif"],
+        sans: ['var(--font-sans)', "'Source Sans 3'", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1200px",
