@@ -80,25 +80,25 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-oxford text-white overflow-hidden">
+      <section className="relative bg-oxford text-white overflow-hidden min-h-[600px] md:min-h-[700px]">
         {/* Subtle radial glow for depth */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-brass opacity-[0.04] blur-3xl translate-x-1/3 -translate-y-1/4" />
         </div>
 
-        <div className="relative max-w-content mx-auto px-4 pt-10 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
+        <div className="relative max-w-content mx-auto px-4 py-16 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
           {/* Text content */}
           <div className="pb-8 md:pb-0">
             {/* Brass accent bar above H1 */}
-            <div className="w-10 h-[3px] bg-brass rounded mb-5" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-6 leading-tight text-h1-mobile md:text-h1-desktop font-normal tracking-tight">
+            <div className="w-12 h-1 bg-brass mb-6" aria-hidden="true" />
+            <h1 className="font-serif text-white mb-6 leading-tight text-4xl md:text-6xl font-normal tracking-tight">
               Professional Painters &amp; Decorators in North London
             </h1>
-            <p className="text-white/80 text-body-mobile md:text-body-desktop leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
               Meticulous painting, wallpaper installation, and plastering across North &amp; South London.
               Clean finishes, on time, every time.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Link
                 href="/contact"
                 className="bg-brass text-white font-semibold px-8 py-4 text-center hover:bg-brass/90 transition-all duration-300 ease-in-out text-base shadow-lg"
@@ -107,22 +107,26 @@ export default function HomePage() {
               </Link>
               <a
                 href="tel:07828288449"
-                className="border-2 border-white/30 text-white font-semibold px-8 py-4 text-center hover:border-white hover:bg-white hover:text-oxford transition-all duration-300 ease-in-out text-base"
+                className="border-2 border-white/40 text-white font-semibold px-8 py-4 text-center hover:border-white hover:bg-white hover:text-oxford transition-all duration-300 ease-in-out text-base"
               >
                 Call 07828 288 449
               </a>
             </div>
-            {/* Social proof pills */}
+            {/* Trust signals - improved visibility */}
             <div className="flex flex-wrap gap-3">
               {[
-                { text: reviews.google.short },
-                { text: reviews.checkatrade.short },
-                { text: `${reviews.yearsExperience} Years Experience` },
-                { text: 'Fully Insured' },
+                { text: reviews.google.short, highlight: true },
+                { text: reviews.checkatrade.short, highlight: true },
+                { text: `${reviews.yearsExperience} Years Experience`, highlight: false },
+                { text: 'Fully Insured', highlight: false },
               ].map((pill) => (
                 <span
                   key={pill.text}
-                  className="text-label font-semibold text-brass bg-brass/10 border border-brass/25 px-3 py-1.5 uppercase tracking-wider"
+                  className={`text-sm font-semibold px-3 py-2 border transition-all duration-300 ${
+                    pill.highlight 
+                      ? 'text-brass bg-brass/15 border-brass/40' 
+                      : 'text-white/80 bg-white/10 border-white/30'
+                  }`}
                 >
                   {pill.text}
                 </span>
@@ -131,7 +135,7 @@ export default function HomePage() {
           </div>
 
           {/* Hero project photo — full bleed on mobile, rounded card on desktop */}
-          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-md mt-8 md:mt-0">
+          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-xl mt-8 md:mt-0">
             <Image
               src="/images/exterior-painting-detached-house-north-london.webp"
               alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
@@ -140,7 +144,7 @@ export default function HomePage() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
               className="object-cover"
             />
-            <div className="absolute bottom-4 left-4 bg-oxford/80 backdrop-blur-sm text-white text-label font-semibold px-3 py-1.5 border border-white/10 uppercase tracking-wider">
+            <div className="absolute bottom-4 left-4 bg-oxford/90 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 border border-white/20">
               Southgate, N14 — Full Exterior Repaint
             </div>
           </div>
@@ -152,12 +156,12 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-[2px] bg-brass mx-auto mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-oxford mb-6 text-h2-mobile md:text-h2-desktop font-normal tracking-tight">Tired of Unreliable Decorators?</h2>
-            <p className="text-slate text-body-mobile md:text-body-desktop leading-relaxed mb-6">
+            <h2 className="font-serif text-oxford mb-6 text-3xl md:text-5xl font-normal tracking-tight">Tired of Unreliable Decorators?</h2>
+            <p className="text-slate text-lg md:text-xl leading-relaxed mb-6">
               You&apos;ve been let down before. A decorator who doesn&apos;t show up, cuts corners on
               preparation, leaves a mess, or disappears before the job is done.
             </p>
-            <p className="text-slate text-body-mobile md:text-body-desktop leading-relaxed mb-10">
+            <p className="text-slate text-lg md:text-xl leading-relaxed mb-10">
               Jetmir Bozhiqi has been delivering meticulous, punctual, and respectful decorating services
               to London homeowners for {reviews.yearsExperience} years. With a {reviews.checkatrade.score}/10 score on Checkatrade from {reviews.checkatrade.count} verified
               reviews, the results speak for themselves.
@@ -168,10 +172,10 @@ export default function HomePage() {
                 { label: 'Dust-free preparation', desc: 'Your home left clean at the end of every day' },
                 { label: '12-month guarantee', desc: 'We stand behind every brush stroke' },
               ].map((item) => (
-                <div key={item.label} className="bg-ivory rounded-lg p-6 border border-slate-100 shadow-sm">
-                  <div className="w-8 h-1 bg-brass mb-3"></div>
-                  <p className="font-serif text-oxford text-lg mb-1 font-normal">{item.label}</p>
-                  <p className="text-muted text-sm">{item.desc}</p>
+                <div key={item.label} className="bg-ivory rounded-lg p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="w-8 h-1 bg-brass mb-4"></div>
+                  <p className="font-serif text-oxford text-xl mb-2 font-normal">{item.label}</p>
+                  <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -218,8 +222,8 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-4">
           <div className="text-center mb-12">
             <div className="w-16 h-[2px] bg-brass mx-auto mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-oxford mb-4 text-h2-mobile md:text-h2-desktop font-normal tracking-tight">Our Services</h2>
-            <p className="text-muted max-w-xl mx-auto text-body-mobile md:text-body-desktop">
+            <h2 className="font-serif text-oxford mb-4 text-3xl md:text-5xl font-normal tracking-tight">Our Services</h2>
+            <p className="text-muted max-w-xl mx-auto text-lg md:text-xl leading-relaxed">
               From a single feature wall to a complete exterior repaint — we deliver flawless results on every project.
             </p>
           </div>
@@ -230,7 +234,7 @@ export default function HomePage() {
                 href={service.href}
                 className="bg-white rounded-lg p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out group"
               >
-                <h3 className="font-serif text-oxford text-xl mb-2 font-normal">{service.title}</h3>
+                <h3 className="font-serif text-oxford text-xl mb-3 font-normal">{service.title}</h3>
                 <p className="text-muted text-sm leading-relaxed mb-4">{service.description}</p>
                 <span className="text-brass text-sm font-semibold group-hover:underline">
                   Learn more →

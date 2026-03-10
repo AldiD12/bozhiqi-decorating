@@ -2,15 +2,22 @@ import { reviews } from '@/app/data/reviews';
 
 export default function TrustBar() {
   return (
-    <div className="bg-oxford text-white py-2.5 px-4">
-      <div className="max-w-content mx-auto text-center text-label font-semibold flex flex-wrap justify-center gap-x-4 gap-y-1 uppercase tracking-wider">
-        <span className="text-brass">{reviews.google.short} on Google</span>
-        <span className="hidden sm:inline text-white/60">|</span>
-        <span>{reviews.checkatrade.score}/10 on Checkatrade <span className="text-brass">({reviews.checkatrade.count} reviews)</span></span>
-        <span className="hidden sm:inline text-white/60">|</span>
-        <span>Fully Insured</span>
-        <span className="hidden sm:inline text-white/60">|</span>
-        <span>{reviews.yearsExperience} Years Experience</span>
+    <div className="bg-oxford text-white py-3 px-4 border-b border-brass/20">
+      <div className="max-w-content mx-auto text-center text-sm font-semibold flex flex-wrap justify-center gap-x-6 gap-y-2">
+        <span className="text-brass flex items-center gap-1">
+          <span className="text-brass">★★★★★</span>
+          <span className="text-white">{reviews.google.short}</span>
+        </span>
+        <span className="hidden sm:inline text-white/40">|</span>
+        <span className="flex items-center gap-1">
+          <span className="text-brass">★★★★★</span>
+          <span className="text-white">{reviews.checkatrade.score}/10 Checkatrade</span>
+          <span className="text-brass">({reviews.checkatrade.count} reviews)</span>
+        </span>
+        <span className="hidden sm:inline text-white/40">|</span>
+        <span className="text-white/90">Fully Insured</span>
+        <span className="hidden sm:inline text-white/40">|</span>
+        <span className="text-white/90">{reviews.yearsExperience} Years Experience</span>
       </div>
     </div>
   );
