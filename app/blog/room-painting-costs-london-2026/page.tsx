@@ -84,8 +84,31 @@ const pricingData = [
 ];
 
 export default function RoomPaintingCostsPage() {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'How Much Does It Cost to Paint a Room in London? (2026 Prices)',
+    image: 'https://bozhiqidecorating.co.uk/images/interior-painting-open-plan-dining-room-neutral.webp',
+    datePublished: '2026-03-10T08:00:00+00:00',
+    dateModified: '2026-03-10T08:00:00+00:00',
+    author: {
+      '@type': 'Person',
+      name: 'Jetmir Bozhiqi',
+      url: 'https://bozhiqidecorating.co.uk/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bozhiqi Painting & Decorating',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://bozhiqidecorating.co.uk/images/favicon-bozhiqi.png',
+      },
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Breadcrumb */}
       <section className="bg-[#faf8f5] py-4">
         <div className="max-w-content mx-auto px-4">

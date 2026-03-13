@@ -36,6 +36,20 @@ export const metadata: Metadata = {
     siteName: 'Bozhiqi Painting & Decorating',
     locale: 'en_GB',
     type: 'website',
+    images: [
+      {
+        url: '/images/exterior-painting-detached-house-north-london.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Bozhiqi Painting & Decorating in North London',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painters & Decorators in North London | Bozhiqi',
+    description: `Professional painting & decorating in North London. ${reviews.checkatrade.summary}. ${reviews.yearsExperience} years experience. Get a free quote today.`,
+    images: ['/images/exterior-painting-detached-house-north-london.webp'],
   },
   robots: {
     index: true,
@@ -72,7 +86,10 @@ const organizationSchema = {
   },
   priceRange: '££',
   image: 'https://bozhiqidecorating.co.uk/images/bozhiqi-hero.webp',
-  sameAs: [],
+  sameAs: [
+    reviews.checkatrade.url,
+    // Add Google Business URL here later once claimed
+  ],
 };
 
 export default function RootLayout({
