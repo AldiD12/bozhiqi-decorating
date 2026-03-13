@@ -80,194 +80,204 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[#0f172a] text-white overflow-hidden min-h-[700px] md:min-h-[800px]">
-        {/* Background Image with Parallax Effect */}
+      <section className="relative bg-[#0f172a] text-white overflow-hidden min-h-[80vh] flex items-center justify-center">
+        {/* Heritage Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/interior-painting-panelled-reception-room-herringbone.webp"
-            alt="Professional painting work background"
+            src="/images/exterior-painting-detached-house-north-london.webp"
+            alt="Professional exterior painting by Bozhiqi in North London"
             fill
-            className="object-cover opacity-25 scale-105 transition-transform duration-1000 ease-out"
+            className="object-cover"
             priority
           />
-          {/* Gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/90 via-[#0f172a]/80 to-[#0f172a]/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/60 via-transparent to-[#0f172a]/80"></div>
+          <div className="absolute inset-0 hero-gradient"></div>
         </div>
 
-        {/* Dynamic brass glow effects */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#b8860b] opacity-[0.08] blur-3xl translate-x-1/3 -translate-y-1/4 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#b8860b] opacity-[0.04] blur-2xl -translate-x-1/4 translate-y-1/4"></div>
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <span className="text-[#faf8f5] font-sans text-xs tracking-[0.4em] mb-4 block uppercase">Established Craftsmanship</span>
+          
+          <h1 className="text-[#faf8f5] font-serif text-4xl md:text-5xl mb-8 leading-tight">
+            British Heritage <br/> Painting &amp; Decorating
+          </h1>
+          
+          <p className="text-[#faf8f5]/90 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-light">
+            Meticulous painting, wallpaper installation, and plastering across North &amp; South London. Clean finishes, on time, every time.
+          </p>
+          
+          <Link
+            href="/contact"
+            className="inline-block bg-[#b8860b] text-[#faf8f5] px-10 py-4 font-sans text-sm tracking-[0.2em] uppercase font-semibold hover:bg-[#b8860b]/90 transition-all duration-300"
+          >
+            Request a Consultation
+          </Link>
         </div>
+      </section>
 
-        {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23ffffff' points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-
-        <div className="relative z-10 max-w-content mx-auto px-4 py-20 md:py-32 w-full md:grid md:grid-cols-2 md:gap-16 md:items-center">
-          {/* Text content - Enhanced with better shadows */}
-          <div className="pb-12 md:pb-0">
-            {/* Animated brass accent bar */}
-            <div className="w-16 h-1 bg-[#b8860b] mb-8 shadow-lg shadow-[#b8860b]/30" aria-hidden="true" />
-            <h1 className="font-serif text-white mb-8 leading-tight text-5xl md:text-6xl font-normal tracking-tight drop-shadow-2xl">
-              Professional Painters &amp; Decorators in North London
-            </h1>
-            <p className="text-white text-xl md:text-2xl leading-relaxed mb-10 max-w-xl drop-shadow-lg">
-              Meticulous painting, wallpaper installation, and plastering across North &amp; South London.
-              Clean finishes, on time, every time.
-            </p>
-            <div className="flex flex-col gap-4 mb-10">
-              <Link
-                href="/contact"
-                className="bg-[#b8860b] text-white font-semibold px-10 py-5 text-center hover:bg-[#b8860b]/90 transition-all duration-300 ease-in-out text-lg shadow-2xl hover:shadow-[#b8860b]/30 hover:scale-[1.02] transform"
-              >
-                Get a Free Quote
-              </Link>
-              <a
-                href="tel:07828288449"
-                className="border-2 border-white/60 text-white font-semibold px-10 py-5 text-center hover:border-white hover:bg-white/10 hover:text-white transition-all duration-300 ease-in-out text-lg backdrop-blur-md shadow-lg"
-              >
-                Call 07828 288 449
-              </a>
-            </div>
-            {/* Enhanced trust signals */}
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              {[
-                { text: reviews.google.short, highlight: true },
-                { text: reviews.checkatrade.short, highlight: true },
-                { text: `${reviews.yearsExperience} Years Experience`, highlight: false },
-                { text: 'Fully Insured', highlight: false },
-              ].map((pill) => (
-                <span
-                  key={pill.text}
-                  className={`text-sm font-semibold px-4 py-3 border transition-all duration-300 backdrop-blur-md shadow-lg ${
-                    pill.highlight 
-                      ? 'text-[#b8860b] bg-[#b8860b]/20 border-[#b8860b]/60 shadow-[#b8860b]/20' 
-                      : 'text-white bg-white/15 border-white/50 shadow-white/10'
-                  }`}
-                >
-                  {pill.text}
-                </span>
+      {/* Heritage Trust Indicators */}
+      <section className="bg-[#0f172a] py-10 px-6 border-t border-[#0f172a]">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 opacity-80 max-w-4xl mx-auto">
+          <div className="flex flex-col items-center">
+            <div className="text-[#b8860b] flex gap-1 mb-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i}>★</span>
               ))}
             </div>
+            <span className="text-[#faf8f5] font-sans text-[10px] tracking-widest uppercase">{reviews.google.short}</span>
           </div>
+          
+          <div className="w-px h-12 bg-[#b8860b] hidden md:block"></div>
+          
+          <div className="flex flex-col items-center">
+            <div className="text-[#b8860b] flex gap-1 mb-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i}>★</span>
+              ))}
+            </div>
+            <span className="text-[#faf8f5] font-sans text-[10px] tracking-widest uppercase">{reviews.checkatrade.short}</span>
+          </div>
+          
+          <div className="w-px h-12 bg-[#b8860b] hidden md:block"></div>
+          
+          <div className="flex flex-col items-center">
+            <span className="text-[#faf8f5] font-serif text-lg tracking-wider mb-1 italic">{reviews.yearsExperience} Years</span>
+            <span className="text-[#faf8f5] font-sans text-[10px] tracking-widest uppercase">Experience</span>
+          </div>
+          
+          <div className="w-px h-12 bg-[#b8860b] hidden md:block"></div>
+          
+          <div className="flex flex-col items-center">
+            <span className="text-[#faf8f5] font-serif text-lg tracking-wider mb-1 italic">Fully</span>
+            <span className="text-[#faf8f5] font-sans text-[10px] tracking-widest uppercase">Insured</span>
+          </div>
+        </div>
+      </section>
 
-          {/* Enhanced hero project photo */}
-          <div className="relative -mx-4 md:mx-0 aspect-[4/3] md:rounded-lg overflow-hidden shadow-2xl mt-12 md:mt-0 border border-white/20 hover:scale-[1.02] transition-transform duration-500">
+      {/* Heritage & Craft Section */}
+      <section className="py-24 px-8 bg-[#faf8f5]">
+        <div className="max-w-md mx-auto text-center">
+          <h2 className="font-serif text-3xl text-[#0f172a] mb-8 leading-snug">The Pursuit of Architectural Perfection</h2>
+          <div className="w-16 h-px bg-[#b8860b] mx-auto mb-10"></div>
+          <p className="text-[#0f172a] font-sans leading-relaxed text-lg mb-12 font-light">
+            At Bozhiqi, we honor the architectural integrity of London&apos;s most prestigious residences. Using traditional methods and the finest British paints, our artisans deliver a finish that is not merely applied, but curated.
+          </p>
+          <div className="space-y-16">
+            {/* Feature 1 */}
+            <div className="text-left">
+              <h3 className="font-serif text-xl text-[#0f172a] mb-4">I. Heritage Pigments</h3>
+              <p className="text-[#0f172a] font-sans text-sm leading-relaxed opacity-80">
+                We exclusively utilize high-pigment palettes from Farrow &amp; Ball and Little Greene, ensuring deep, light-responsive color that matures gracefully over decades.
+              </p>
+            </div>
+            {/* Feature 2 */}
+            <div className="text-left">
+              <h3 className="font-serif text-xl text-[#0f172a] mb-4">II. Master Surface Preparation</h3>
+              <p className="text-[#0f172a] font-sans text-sm leading-relaxed opacity-80">
+                The soul of the finish lies in what is unseen. Our meticulous preparation process involves multiple stages of hand-sanding and priming for structural permanence.
+              </p>
+            </div>
+            {/* Feature 3 */}
+            <div className="text-left">
+              <h3 className="font-serif text-xl text-[#0f172a] mb-4">III. Punctual Excellence</h3>
+              <p className="text-[#0f172a] font-sans text-sm leading-relaxed opacity-80">
+                With {reviews.yearsExperience} years serving London homeowners and a {reviews.checkatrade.score}/10 score on Checkatrade from {reviews.checkatrade.count} verified reviews, reliability is our foundation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Showcase */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-1 bg-[#b8860b]">
+        {[
+          {
+            src: '/images/interior-painting-panelled-reception-room-herringbone.webp',
+            alt: 'Fine detailing on cornices',
+          },
+          {
+            src: '/images/exterior-painting-victorian-terraces-white-blue-london.webp',
+            alt: 'Victorian terraced houses repainted white and blue',
+          },
+          {
+            src: '/images/interior-painting-kitchen-navy-shaker-cabinets.webp',
+            alt: 'Bespoke cabinetry finish',
+          },
+          {
+            src: '/images/plastering-painting-hallway-arched-ceiling.webp',
+            alt: 'Hallway with arched plastered and painted ceiling',
+          },
+        ].map((photo) => (
+          <div key={photo.src} className="relative h-[50vh] overflow-hidden">
             <Image
-              src="/images/exterior-painting-detached-house-north-london.webp"
-              alt="Full exterior repaint of detached house in North London by Bozhiqi Painting & Decorating"
+              src={photo.src}
+              alt={photo.alt}
               fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px"
-              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-4 left-4 bg-[#0f172a]/90 backdrop-blur-md text-white text-sm font-semibold px-4 py-2 border border-white/30 shadow-lg">
-              Southgate, N14 — Full Exterior Repaint
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Pain & Agitation */}
-      <section className="bg-white py-20 md:py-32">
-        <div className="max-w-content mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-[2px] bg-[#b8860b] mx-auto mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-[#0f172a] mb-6 text-3xl md:text-5xl font-normal tracking-tight">Tired of Unreliable Decorators?</h2>
-            <p className="text-[#3d3d3d] text-lg md:text-xl leading-relaxed mb-6">
-              You&apos;ve been let down before. A decorator who doesn&apos;t show up, cuts corners on
-              preparation, leaves a mess, or disappears before the job is done.
-            </p>
-            <p className="text-[#3d3d3d] text-lg md:text-xl leading-relaxed mb-10">
-              Jetmir Bozhiqi has been delivering meticulous, punctual, and respectful decorating services
-              to London homeowners for {reviews.yearsExperience} years. With a {reviews.checkatrade.score}/10 score on Checkatrade from {reviews.checkatrade.count} verified
-              reviews, the results speak for themselves.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                { label: 'On time, every time', desc: 'Punctual and respectful of your schedule' },
-                { label: 'Dust-free preparation', desc: 'Your home left clean at the end of every day' },
-                { label: '12-month guarantee', desc: 'We stand behind every brush stroke' },
-              ].map((item) => (
-                <div key={item.label} className="bg-[#faf8f5] rounded-lg p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <div className="w-8 h-1 bg-[#b8860b] mb-4"></div>
-                  <p className="font-serif text-[#0f172a] text-xl mb-2 font-normal">{item.label}</p>
-                  <p className="text-[#6b7280] text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Strip */}
-      <section className="bg-oxford py-6 overflow-hidden" aria-label="Project photo highlights">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-4 max-w-content mx-auto">
-          {[
-            {
-              src: '/images/interior-painting-panelled-reception-room-herringbone.webp',
-              alt: 'Panelled reception room with white walls and herringbone floor',
-            },
-            {
-              src: '/images/exterior-painting-victorian-terraces-white-blue-london.webp',
-              alt: 'Victorian terraced houses repainted white and blue',
-            },
-            {
-              src: '/images/interior-painting-kitchen-navy-shaker-cabinets.webp',
-              alt: 'Navy shaker kitchen with brass handles',
-            },
-            {
-              src: '/images/plastering-painting-hallway-arched-ceiling.webp',
-              alt: 'Hallway with arched plastered and painted ceiling',
-            },
-          ].map((photo) => (
-            <div key={photo.src} className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-          ))}
-        </div>
+        ))}
       </section>
 
       {/* Services Overview */}
-      <section className="bg-[#faf8f5] py-20 md:py-32">
-        <div className="max-w-content mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="w-16 h-[2px] bg-[#b8860b] mx-auto mb-8" aria-hidden="true" />
-            <h2 className="font-serif text-[#0f172a] mb-4 text-3xl md:text-5xl font-normal tracking-tight">Our Services</h2>
-            <p className="text-[#6b7280] max-w-xl mx-auto text-lg md:text-xl leading-relaxed">
-              From a single feature wall to a complete exterior repaint — we deliver flawless results on every project.
-            </p>
+      <section className="bg-[#0f172a] py-24 md:py-32 relative overflow-hidden">
+        {/* Subtle texture overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-opacity='0.1'%3E%3Crect fill='%23ffffff' width='1' height='1'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+            <span className="text-[#b8860b] font-sans text-xs tracking-[0.4em] mb-6 block uppercase">Architectural Services</span>
+            <h2 className="font-serif text-[#faf8f5] mb-6 text-4xl md:text-6xl font-normal leading-tight">
+              Craftsmanship<br/>Refined
+            </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#b8860b]/20">
+            {services.map((service, index) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="bg-white rounded-lg p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out group"
+                className="bg-[#0f172a] p-12 md:p-16 group hover:bg-[#faf8f5] transition-all duration-500 ease-out relative overflow-hidden"
               >
-                <h3 className="font-serif text-[#0f172a] text-xl mb-3 font-normal">{service.title}</h3>
-                <p className="text-[#6b7280] text-sm leading-relaxed mb-4">{service.description}</p>
-                <span className="text-[#b8860b] text-sm font-semibold group-hover:underline">
-                  Learn more →
-                </span>
+                {/* Service number */}
+                <div className="absolute top-8 right-8 text-[#b8860b]/30 group-hover:text-[#b8860b] font-serif text-6xl md:text-8xl leading-none transition-colors duration-500">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                
+                <div className="relative z-10">
+                  <h3 className="font-serif text-[#faf8f5] group-hover:text-[#0f172a] text-2xl md:text-3xl mb-6 font-normal transition-colors duration-500 leading-tight">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-[#faf8f5]/70 group-hover:text-[#0f172a]/70 text-base leading-relaxed mb-8 transition-colors duration-500 max-w-sm">
+                    {service.description}
+                  </p>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-px bg-[#b8860b] group-hover:w-20 transition-all duration-500"></div>
+                    <span className="text-[#b8860b] font-sans text-sm tracking-[0.2em] uppercase font-semibold">
+                      Explore
+                    </span>
+                  </div>
+                </div>
               </Link>
             ))}
+            
+            {/* All Services - Special treatment */}
             <Link
               href="/services"
-              className="bg-[#0f172a] rounded-lg p-6 text-white flex flex-col justify-center items-center text-center hover:bg-[#0f172a]/90 transition-all duration-300 ease-in-out"
+              className="bg-[#b8860b] p-12 md:p-16 group hover:bg-[#faf8f5] transition-all duration-500 ease-out relative overflow-hidden md:col-span-2"
             >
-              <p className="font-serif text-xl mb-2 font-normal">All Services</p>
-              <p className="text-white/80 text-sm">Wall prep, ceiling painting, touch-ups & more</p>
+              <div className="text-center">
+                <div className="w-24 h-px bg-[#0f172a]/30 group-hover:bg-[#b8860b] mx-auto mb-8 transition-colors duration-500"></div>
+                <h3 className="font-serif text-[#0f172a] group-hover:text-[#0f172a] text-3xl md:text-4xl mb-4 font-normal">
+                  Complete Portfolio
+                </h3>
+                <p className="text-[#0f172a]/70 group-hover:text-[#0f172a]/70 text-lg max-w-md mx-auto">
+                  Wall preparation, ceiling restoration, period features, and bespoke finishes
+                </p>
+              </div>
             </Link>
           </div>
         </div>
@@ -453,14 +463,20 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/reviews"
+              className="inline-block bg-[#b8860b] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9a7009] transition-all"
+            >
+              Read All {reviews.checkatrade.count} Reviews
+            </Link>
             <a
               href={reviews.checkatrade.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border-2 border-[#b8860b] text-[#b8860b] font-semibold px-6 py-3 rounded-lg hover:bg-[#b8860b] hover:text-white transition-all"
             >
-              Read All {reviews.checkatrade.count} Reviews on Checkatrade
+              View on Checkatrade ↗
             </a>
           </div>
         </div>

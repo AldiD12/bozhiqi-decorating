@@ -27,6 +27,7 @@ export default function Footer() {
               <li><Link href="/services/wallpaper-installation" className="text-[#e8e4df] hover:text-[#b8860b] transition-colors">Wallpaper Installation</Link></li>
               <li><Link href="/services/plastering" className="text-[#e8e4df] hover:text-[#b8860b] transition-colors">Plastering</Link></li>
               <li><Link href="/services/woodwork-painting" className="text-[#e8e4df] hover:text-[#b8860b] transition-colors">Woodwork Painting</Link></li>
+              <li className="pt-2 border-t border-[#2d2d4e] mt-2"><Link href="/reviews" className="text-[#b8860b] hover:underline text-xs">Read all reviews →</Link></li>
             </ul>
           </nav>
 
