@@ -35,7 +35,7 @@ export default function CookieBanner() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-40 md:bottom-4 md:left-4 md:right-4 md:max-w-lg"
+      className="fixed bottom-16 left-0 right-0 z-[60] md:bottom-4 md:left-4 md:right-4 md:max-w-lg"
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
