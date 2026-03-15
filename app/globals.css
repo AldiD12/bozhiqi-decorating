@@ -12,7 +12,11 @@
   --muted: #6b7280;
   --success: #166534;
   --border-color: #e8e4df;
-  
+
+  /* Font variables — loaded at runtime via Google Fonts <link> in layout */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+
   /* Legacy colors for backward compatibility */
   --charcoal: #1a1a2e;
 }
