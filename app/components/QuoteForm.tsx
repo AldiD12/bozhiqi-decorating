@@ -23,14 +23,30 @@ export default function QuoteForm() {
     email: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleNext = () => setStep((s) => s + 1);
   const handleBack = () => setStep((s) => s - 1);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    events.quoteFormComplete(formData.service);
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError('');
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed');
+      events.quoteFormComplete(formData.service);
+      setSubmitted(true);
+    } catch {
+      setSubmitError('Something went wrong. Please call us on 07828 288 449.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -187,10 +203,13 @@ export default function QuoteForm() {
                 />
               </label>
             </div>
+            {submitError && (
+              <p className="text-red-600 text-sm mt-3">{submitError}</p>
+            )}
             <div className="flex gap-3 mt-4">
               <button type="button" onClick={handleBack} aria-label="Go back to step 3" className="flex-1 border-2 border-[#e8e4df] text-[#6b7280] py-3 rounded-xl font-semibold hover:border-[#3d3d3d] transition-colors">Back</button>
-              <button type="submit" className="flex-1 bg-[#b8860b] text-white py-3 px-6 rounded-xl font-semibold hover:bg-[#9a7009] transition-colors">
-                Send My Request
+              <button type="submit" disabled={submitting} className="flex-1 bg-[#b8860b] text-white py-3 px-6 rounded-xl font-semibold hover:bg-[#9a7009] transition-colors disabled:opacity-60">
+                {submitting ? 'Sending…' : 'Send My Request'}
               </button>
             </div>
           </div>
