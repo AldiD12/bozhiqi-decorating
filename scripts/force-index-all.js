@@ -1,6 +1,6 @@
 /**
  * force-index-all.js
- * Submit all 22 pages to the Google Indexing API.
+ * Submit all 25 pages to the Google Indexing API.
  *
  * SETUP (one-time):
  *   1. Create a Service Account in Google Cloud Console
@@ -47,6 +47,9 @@ const PAGES = [
   '/locations/purley',
   '/locations/wallington',
   '/privacy-policy',
+  '/reviews',
+  '/blog',
+  '/blog/room-painting-costs-london-2026',
 ];
 
 const KEY_FILE = path.join(__dirname, 'google-indexing-key.json');
