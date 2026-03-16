@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: 'Quote Request <onboarding@resend.dev>',
-      to: 'jetmir@bozhiqidecorating.co.uk',
+      to: 'aldidmk1@gmail.com',
       replyTo: email || undefined,
       subject: `New Quote Request – ${service} – ${postcode}`,
       html: `
