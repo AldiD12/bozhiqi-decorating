@@ -19,9 +19,9 @@ export const reviews = {
     score: '5.0',
     outOf: '5',
     /** Number of Google reviews surfaced in schema */
-    count: 1,
+    count: 7,
     /** e.g. "★★★★★ 5.0 Google" */
-    short: '★★★★★ 5.0 Google',
+    short: '★★★★★ 5.0 Google (7 reviews)',
   },
   yearsExperience: 15,
 } as const;
