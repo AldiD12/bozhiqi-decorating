@@ -23,6 +23,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Woodwork Painting',
   serviceType: 'Woodwork Painting & Finishing',
+  image: 'https://bozhiqidecorating.co.uk/images/interior-painting-hallway-stained-glass-woodwork.webp',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Bozhiqi Painting & Decorating',

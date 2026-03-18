@@ -23,6 +23,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Exterior Painting',
   serviceType: 'Exterior Painting & Property Maintenance',
+  image: 'https://bozhiqidecorating.co.uk/images/exterior-painting-detached-house-north-london.webp',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Bozhiqi Painting & Decorating',

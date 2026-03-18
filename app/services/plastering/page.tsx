@@ -23,6 +23,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Plastering',
   serviceType: 'Plastering & Wall Repairs',
+  image: 'https://bozhiqidecorating.co.uk/images/plastering-painting-hallway-arched-ceiling.webp',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Bozhiqi Painting & Decorating',

@@ -23,6 +23,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Wallpaper Installation',
   serviceType: 'Wallpaper Installation & Hanging',
+  image: 'https://bozhiqidecorating.co.uk/images/interior-painting-panelled-reception-room-herringbone.webp',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Bozhiqi Painting & Decorating',

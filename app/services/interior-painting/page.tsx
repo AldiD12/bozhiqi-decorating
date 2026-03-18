@@ -23,6 +23,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Interior Painting',
   serviceType: 'Interior Painting & Decorating',
+  image: 'https://bozhiqidecorating.co.uk/images/interior-painting-living-room-fireplace-period-cornicing.webp',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Bozhiqi Painting & Decorating',

@@ -17,6 +17,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'Bozhiqi Painting & Decorating',
+    image: 'https://bozhiqidecorating.co.uk/images/bozhiqi-hero.webp',
     url: `https://bozhiqidecorating.co.uk/locations/${location.slug}`,
     telephone: '+447828288449',
     areaServed: {

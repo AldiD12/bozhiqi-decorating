@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Google service account keys (sensitive)
+scripts/google-indexing-key.json
+**/google-indexing-key.json

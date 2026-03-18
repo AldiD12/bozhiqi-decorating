@@ -16,6 +16,16 @@ export const metadata: Metadata = {
   },
   description:
     `Professional painting & decorating in North London. ${reviews.checkatrade.summary}. ${reviews.yearsExperience} years experience. Get a free quote today.`,
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '48x48' },
+    ],
+    apple: [
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     siteName: 'Bozhiqi Painting & Decorating',
     locale: 'en_GB',
@@ -72,7 +82,7 @@ const organizationSchema = {
   image: 'https://bozhiqidecorating.co.uk/images/bozhiqi-hero.webp',
   sameAs: [
     reviews.checkatrade.url,
-    // Add Google Business URL here later once claimed
+    'https://www.google.com/search?q=Bozhiqi+Painting+%26+Decorating&stick=H4sIAAAAAAAA_-NgU1I1qDBJTDOxNEwzMU4zSDIzTUuxMqgwM7VMNjEzskxLNDA1TzI0WMQq65RflZFZmKkQkJiZV5KZl66gpuCSmpxflAjiAADhwPNfSQAAAA&hl=en&mat=CR5kC1IdLw0MElYBTVDHnnJ90VsAk7AoynZssXw63_oEkRhD6SZ5u7f3PQlVdmbBaRPvnHCY4kPSXbH-FxnlrJU3sJBB5xtOsphG5x8pcxGvpZePn0WnifdwzYVyuG0asQ&authuser=0'
   ],
 };
 

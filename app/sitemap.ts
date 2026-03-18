@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { locations } from '@/app/data/locations';
+import fs from 'fs';
+import path from 'path';
 
 const BASE_URL = 'https://bozhiqidecorating.co.uk';
 
@@ -84,12 +86,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${BASE_URL}/blog/room-painting-costs-london-2026`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${BASE_URL}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -104,5 +100,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...locationPages];
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const blogDir = path.join(process.cwd(), 'app', 'blog');
+    const entries = fs.readdirSync(blogDir, { withFileTypes: true });
+
+    blogPages = entries
+      .filter((entry) => entry.isDirectory())
+      .map((dir) => ({
+        url: `${BASE_URL}/blog/${dir.name}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      }));
+  } catch (error) {
+    console.error('Error generating blog sitemap entries:', error);
+  }
+
+  return [...staticPages, ...locationPages, ...blogPages];
 }
